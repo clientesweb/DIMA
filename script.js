@@ -43,8 +43,8 @@ document.addEventListener('DOMContentLoaded', function() {
     // Top banner messages
     const bannerMessages = [
         "Bienvenidos a Runway Studio",
-        "Creatividad en movimiento para tu marca",
-        "Transforma tu visión en realidad"
+        "Agendá una reunión sin cargo",
+        "Regístrate hoy y obtené un 10% de descuento en tu próximo servicio contratado"
     ];
     const bannerContainer = document.getElementById('banner-messages');
     let currentMessageIndex = 0;
@@ -256,7 +256,7 @@ document.addEventListener('DOMContentLoaded', function() {
         },
         'social-media': {
             title: 'Gestión de Contenido y Redes Sociales',
-            description: 'Manejamos tus redes sociales para aumentar tu presencia online. Desarrollamos estrategias de contenido, programamos publicaciones y gestionamos la interacción con tu audiencia.'
+            description: 'Desarrollamos y gestionamos contenido visual y escrito que refleja la identidad de tu marca. Construyendo una presencia sólida y coherente en redes sociales. Nuestro enfoque es atraer, inspirar y conectar con tu audiencia a través de estrategias integrales que fortalecen cada interacción en los canales clave para tu negocio'
         },
         'community-manager': {
             title: 'Community Manager',
