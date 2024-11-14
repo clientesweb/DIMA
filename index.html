@@ -272,7 +272,12 @@
                     Your browser does not support the video tag.
                 </video>
                 <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-                    <h1 class="text-4xl md:text-6xl font-bold text-white text-center text-shadow font-serif">Runway Studio<br>Creatividad en Movimiento</h1>
+                    <div class="text-center">
+                        <h1 class="text-4xl md:text-6xl font-bold text-white mb-4 text-shadow font-serif">Runway Studio<br>Creatividad en Movimiento</h1>
+                        <div id="hero-messages" class="text-xl md:text-2xl text-white">
+                            <!-- Los mensajes se insertarán aquí dinámicamente -->
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -293,35 +298,70 @@
                     <img src="https://images.unsplash.com/photo-1434626881859-194d67b2b86f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000&q=80" alt="Branding y Re-branding" class="absolute inset-0 w-full h-full object-cover">
                     <div class="absolute inset-0 bg-black bg-opacity-60 group-hover:bg-opacity-40 transition-all duration-300"></div>
                     <div class="relative z-10 p-6 h-full flex flex-col justify-end">
-                        <h3 class="text-xl font-bold mb-4 text-white font-display">Branding y Re-branding</h3>
-                        <p class="text-white/80 transform translate-y-8 group-hover:translate-y-0 transition-transform duration-300">
+                        <h3 class="text-xl font-bold mb-2 text-white font-display">Branding y Re-branding</h3>
+                        <p class="text-white/80 text-center transform translate-y-8 group-hover:translate-y-0 transition-transform duration-300">
                             Creamos y renovamos la identidad de tu marca para destacar en el mercado.
                         </p>
+                        <button class="mt-4 bg-highlight text-black px-4 py-2 rounded-full text-sm font-bold hover:bg-white transition-colors duration-300" onclick="openModal('branding-modal')">Más información</button>
                     </div>
                 </div>
                 <div class="relative h-80 rounded-lg overflow-hidden group">
                     <img src="https://images.unsplash.com/photo-1542038784456-1ea8e935640e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000&q=80" alt="Producción y Estilismo" class="absolute inset-0 w-full h-full object-cover">
                     <div class="absolute inset-0 bg-black bg-opacity-60 group-hover:bg-opacity-40 transition-all duration-300"></div>
                     <div class="relative z-10 p-6 h-full flex flex-col justify-end">
-                        <h3 class="text-xl font-bold mb-4 text-white font-display">Producción y Estilismo</h3>
-                        <p class="text-white/80 transform translate-y-8 group-hover:translate-y-0 transition-transform duration-300">
+                        <h3 class="text-xl font-bold mb-2 text-white font-display">Producción y Estilismo</h3>
+                        <p class="text-white/80 text-center transform translate-y-8 group-hover:translate-y-0 transition-transform duration-300">
                             Creamos contenido visual impactante para tu marca.
                         </p>
+                        <button class="mt-4 bg-highlight text-black px-4 py-2 rounded-full text-sm font-bold hover:bg-white transition-colors duration-300" onclick="openModal('production-modal')">Más información</button>
                     </div>
                 </div>
                 <div class="relative h-80 rounded-lg overflow-hidden group">
                     <img src="https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000&q=80" alt="Gestión de Contenido y Redes Sociales" class="absolute inset-0 w-full h-full object-cover">
                     <div class="absolute inset-0 bg-black bg-opacity-60 group-hover:bg-opacity-40 transition-all duration-300"></div>
                     <div class="relative z-10 p-6 h-full flex flex-col justify-end">
-                        <h3 class="text-xl font-bold mb-4 text-white font-display">Gestión de Contenido y Redes Sociales</h3>
-                        <p class="text-white/80 transform translate-y-8 group-hover:translate-y-0 transition-transform duration-300">
+                        <h3 class="text-xl font-bold mb-2 text-white font-display">Gestión de Contenido y Redes Sociales</h3>
+                        <p class="text-white/80 text-center transform translate-y-8 group-hover:translate-y-0 transition-transform duration-300">
                             Manejamos tus redes sociales para aumentar tu presencia online.
                         </p>
+                        <button class="mt-4 bg-highlight text-black px-4 py-2 rounded-full text-sm font-bold hover:bg-white transition-colors duration-300" onclick="openModal('social-media-modal')">Más información</button>
+                    </div>
+                </div>
+                <div class="relative h-80 rounded-lg overflow-hidden group">
+                    <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000&q=80" alt="Community Manager" class="absolute inset-0 w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-black bg-opacity-60 group-hover:bg-opacity-40 transition-all duration-300"></div>
+                    <div class="relative z-10 p-6 h-full flex flex-col justify-end">
+                        <h3 class="text-xl font-bold mb-2 text-white font-display">Community Manager</h3>
+                        <p class="text-white/80 text-center transform translate-y-8 group-hover:translate-y-0 transition-transform duration-300">
+                            Gestionamos y fortalecemos la comunidad online de tu marca.
+                        </p>
+                        <button class="mt-4 bg-highlight text-black px-4 py-2 rounded-full text-sm font-bold hover:bg-white transition-colors duration-300" onclick="openModal('community-manager-modal')">Más información</button>
+                    </div>
+                </div>
+                <div class="relative h-80 rounded-lg overflow-hidden group">
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000&q=80" alt="Paid Media" class="absolute inset-0 w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-black bg-opacity-60 group-hover:bg-opacity-40 transition-all duration-300"></div>
+                    <div class="relative z-10 p-6 h-full flex flex-col justify-end">
+                        <h3 class="text-xl font-bold mb-2 text-white font-display">Paid Media</h3>
+                        <p class="text-white/80 text-center transform translate-y-8 group-hover:translate-y-0 transition-transform duration-300">
+                            Optimizamos tus campañas publicitarias para maximizar el retorno de inversión.
+                        </p>
+                        <button class="mt-4 bg-highlight text-black px-4 py-2 rounded-full text-sm font-bold hover:bg-white transition-colors duration-300" onclick="openModal('paid-media-modal')">Más información</button>
+                    </div>
+                </div>
+                <div class="relative h-80 rounded-lg overflow-hidden group">
+                    <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000&q=80" alt="Website" class="absolute inset-0 w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-black bg-opacity-60 group-hover:bg-opacity-40 transition-all duration-300"></div>
+                    <div class="relative z-10 p-6 h-full flex flex-col justify-end">
+                        <h3 class="text-xl font-bold mb-2 text-white font-display">Website</h3>
+                        <p class="text-white/80 text-center transform translate-y-8 group-hover:translate-y-0 transition-transform duration-300">
+                            Diseñamos y desarrollamos sitios web atractivos y funcionales.
+                        </p>
+                        <button class="mt-4 bg-highlight text-black px-4 py-2 rounded-full text-sm font-bold hover:bg-white transition-colors duration-300" onclick="openModal('website-modal')">Más información</button>
                     </div>
                 </div>
             </div>
         </section>
-
         <!-- Gallery Section -->
         <section id="gallery" class="mb-12 fade-in">
             <h2 class="text-4xl font-serif font-bold text-center mb-6 text-highlight">Nuestra Galería</h2>
@@ -332,18 +372,30 @@
                 <button class="filter-btn bg-gray-200 text-gray-800 px-4 py-2 rounded-full transition-colors duration-300 hover:bg-gray-300 font-display" data-filter="branding">Branding</button>
                 <button class="filter-btn bg-gray-200 text-gray-800 px-4 py-2 rounded-full transition-colors duration-300 hover:bg-gray-300 font-display" data-filter="produccion">Producción</button>
                 <button class="filter-btn bg-gray-200 text-gray-800 px-4 py-2 rounded-full transition-colors duration-300 hover:bg-gray-300 font-display" data-filter="redes">Redes Sociales</button>
+                <button class="filter-btn bg-gray-200 text-gray-800 px-4 py-2 rounded-full transition-colors duration-300 hover:bg-gray-300 font-display" data-filter="community">Community Manager</button>
+                <button class="filter-btn bg-gray-200 text-gray-800 px-4 py-2 rounded-full transition-colors duration-300 hover:bg-gray-300 font-display" data-filter="paid">Paid Media</button>
+                <button class="filter-btn bg-gray-200 text-gray-800 px-4 py-2 rounded-full transition-colors duration-300 hover:bg-gray-300 font-display" data-filter="website">Website</button>
             </div>
 
             <!-- Gallery images -->
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4" id="gallery">
                 <div class="gallery-item branding">
-                    <img src="https://images.unsplash.com/photo-1434626881859-194d67b2b86f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Branding 1" class="w-full h-64 object-cover rounded-lg shadow-md transition-transform duration-300 hover:scale-105">
+                    <img src="https://images.unsplash.com/photo-1434626881859-194d67b2b86f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Branding 1" class="w-full h-64 object-cover rounded-lg shadow-md transition-transform duration-300 hover:scale-105 cursor-pointer" onclick="openGalleryModal('branding-1')">
                 </div>
                 <div class="gallery-item produccion">
-                    <img src="https://images.unsplash.com/photo-1542038784456-1ea8e935640e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Producción 1" class="w-full h-64 object-cover rounded-lg shadow-md transition-transform duration-300 hover:scale-105">
+                    <img src="https://images.unsplash.com/photo-1542038784456-1ea8e935640e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Producción 1" class="w-full h-64 object-cover rounded-lg shadow-md transition-transform duration-300 hover:scale-105 cursor-pointer" onclick="openGalleryModal('produccion-1')">
                 </div>
                 <div class="gallery-item redes">
-                    <img src="https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Redes Sociales 1" class="w-full h-64 object-cover rounded-lg shadow-md transition-transform duration-300 hover:scale-105">
+                    <img src="https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Redes Sociales 1" class="w-full h-64 object-cover rounded-lg shadow-md transition-transform duration-300 hover:scale-105 cursor-pointer" onclick="openGalleryModal('redes-1')">
+                </div>
+                <div class="gallery-item community">
+                    <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Community Manager 1" class="w-full h-64 object-cover rounded-lg shadow-md transition-transform duration-300 hover:scale-105 cursor-pointer" onclick="openGalleryModal('community-1')">
+                </div>
+                <div class="gallery-item paid">
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Paid Media 1" class="w-full h-64 object-cover rounded-lg shadow-md transition-transform duration-300 hover:scale-105 cursor-pointer" onclick="openGalleryModal('paid-1')">
+                </div>
+                <div class="gallery-item website">
+                    <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Website 1" class="w-full h-64 object-cover rounded-lg shadow-md transition-transform duration-300 hover:scale-105 cursor-pointer" onclick="openGalleryModal('website-1')">
                 </div>
                 <!-- Add more gallery items as needed -->
             </div>
@@ -382,7 +434,7 @@
                 </div>
             </div>
         </section>
-
+        
         <!-- Banner publicitario moderno -->
         <div class="relative bg-cover bg-center py-16" style="background-image: url('https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000&q=80');">
             <div class="absolute inset-0 bg-black opacity-60"></div>
@@ -571,8 +623,8 @@
             </div>
         </section>
     </main>
-
-    <footer class="bg-black text-white py-12 pb-24 border-t border-highlight">
+    
+     <footer class="bg-black text-white py-12 pb-24 border-t border-highlight">
         <div class="container mx-auto px-4">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div>
@@ -589,81 +641,155 @@
                     </ul>
                 </div>
                 <div class="text-center md:text-left">
-                    <h3 class="text-xl font-bold mb-4 font-display">Newsletter</h3>
-                    <p class="mb-4">Mantente actualizado con nuestras últimas noticias y ofertas.</p>
-                    <form id="newsletter-form" class="flex flex-col sm:flex-row gap-4">
-                        <input 
-                            type="email" 
-                            placeholder="Tu email" 
-                            class="flex-grow p-2 rounded-lg bg-white/10 border border-white/20 focus:border-highlight focus:ring-1 focus:ring-highlight transition-all duration-300"
-                            required
-                        >
-                        <button 
-                            type="submit" 
-                            class="bg-highlight text-secondary px-6 py-2 rounded-lg hover:bg-white/90 transition-colors duration-300 font-display"
-                        >
-                            Suscribirse
-                        </button>
-                    </form>
+                    <h3 class="text-xl font-bold mb-4 font-display">Síguenos</h3>
+                    <div class="flex justify-center md:justify-start space-x-4">
+                        <a href="https://www.tiktok.com/@rnw.studio" target="_blank" rel="noopener noreferrer" class="text-white hover:text-highlight transition-colors duration-300">
+                            <i class="fab fa-tiktok fa-2x"></i>
+                        </a>
+                        <a href="https://www.instagram.com/rnw.studio_" target="_blank" rel="noopener noreferrer" class="text-white hover:text-highlight transition-colors duration-300">
+                            <i class="fab fa-instagram fa-2x"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
-            <div class="mt-8 pt-8 border-t border-white/10 text-center">
+            <div class="mt-8 text-center">
                 <p>&copy; 2023 Runway Studio. Todos los derechos reservados.</p>
             </div>
         </div>
     </footer>
 
-    <!-- Floating WhatsApp Button -->
-    <a href="https://wa.me/543517323886" target="_blank" rel="noopener noreferrer" class="fixed bottom-24 right-4 z-50 bg-green-500 text-white rounded-full p-4 shadow-lg hover:bg-green-600 transition-colors duration-300">
-        <i class="fab fa-whatsapp text-2xl"></i>
+    <!-- Floating Reservation Button -->
+    <a href="#contact" class="fixed bottom-24 right-4 z-50 bg-highlight text-black p-4 rounded-full shadow-lg hover:bg-white transition-colors duration-300">
+        <i class="fas fa-calendar-alt"></i>
     </a>
 
-    <!-- Floating Reservation Button -->
-    <button id="reservation-btn" class="fixed bottom-24 left-4 z-50 bg-highlight text-secondary rounded-full p-4 shadow-lg hover:bg-white transition-colors duration-300">
-        <i class="fas fa-calendar-alt text-2xl"></i>
-    </button>
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/543517323886" target="_blank" rel="noopener noreferrer" class="fixed bottom-8 right-4 z-50 bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600 transition-colors duration-300">
+        <i class="fab fa-whatsapp"></i>
+    </a>
 
-    <!-- Reservation Modal -->
-    <div id="reservation-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center hidden">
-        <div class="bg-gray-900 rounded-lg p-8 max-w-md w-full">
-            <h2 class="text-2xl font-bold mb-4 text-white font-display">Agendar una Reunión</h2>
-            <form id="reservation-form" class="space-y-4">
-                <input type="text" placeholder="Tu Nombre" class="w-full p-2 border rounded bg-gray-800 text-white" required>
-                <input type="email" placeholder="Tu Email" class="w-full p-2 border rounded bg-gray-800 text-white" required>
-                <input type="tel" placeholder="Tu Teléfono" class="w-full p-2 border rounded bg-gray-800 text-white" required>
-                <input type="date" class="w-full p-2 border rounded bg-gray-800 text-white" required>
-                <textarea placeholder="Notas Adicionales" class="w-full p-2 border rounded bg-gray-800 text-white" rows="3"></textarea>
-                <div class="flex justify-end space-x-2">
-                    <button type="button" id="close-modal" class="px-4 py-2 bg-gray-600 text-white rounded font-display">Cerrar</button>
-                    <button type="submit" class="px-4 py-2 bg-highlight text-secondary rounded font-display">Enviar</button>
-                </div>
-            </form>
+    <!-- App Bar -->
+    <div class="app-bar py-2 px-4">
+        <div class="flex justify-around items-center">
+            <a href="#" class="text-white hover:text-highlight transition-colors duration-300">
+                <i class="fas fa-home"></i>
+            </a>
+            <a href="#services" class="text-white hover:text-highlight transition-colors duration-300">
+                <i class="fas fa-briefcase"></i>
+            </a>
+            <a href="#gallery" class="text-white hover:text-highlight transition-colors duration-300">
+                <i class="fas fa-images"></i>
+            </a>
+            <a href="#contact" class="text-white hover:text-highlight transition-colors duration-300">
+                <i class="fas fa-envelope"></i>
+            </a>
         </div>
     </div>
 
-    <!-- Back to Top Button -->
-    <button id="back-to-top" class="fixed bottom-4 right-4 bg-highlight text-secondary p-2 rounded-full shadow-lg opacity-0 pointer-events-none transition-opacity duration-300">
-        <i class="fas fa-chevron-up"></i>
-    </button>
+    <!-- Service Modals -->
+    <div id="branding-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center hidden">
+        <div class="bg-white p-8 rounded-lg max-w-2xl w-full mx-4">
+            <h3 class="text-2xl font-bold mb-4 text-black">Branding y Re-branding</h3>
+            <p class="text-gray-700 mb-4">Nuestro servicio de branding y re-branding está diseñado para crear o renovar la identidad visual de tu marca. Trabajamos en estrecha colaboración contigo para desarrollar una imagen de marca coherente y atractiva que refleje los valores y la personalidad de tu empresa.</p>
+            <ul class="list-disc list-inside text-gray-700 mb-4">
+                <li>Diseño de logotipos</li>
+                <li>Desarrollo de paleta de colores</li>
+                <li>Selección de tipografía</li>
+                <li>Creación de guías de estilo de marca</li>
+                <li>Diseño de materiales de marketing</li>
+            </ul>
+            <button onclick="closeModal('branding-modal')" class="bg-black text-white px-4 py-2 rounded hover:bg-gray-800">Cerrar</button>
+        </div>
+    </div>
 
-    <!-- App Bar for Mobile -->
-    <div class="app-bar md:hidden flex justify-around items-center py-4">
-        <a href="#about" class="text-white hover:text-highlight transition-colors duration-300">
-            <i class="fas fa-info-circle text-2xl"></i>
-            <span class="block text-xs mt-1 font-display">Sobre</span>
-        </a>
-        <a href="#services" class="text-white hover:text-highlight transition-colors duration-300">
-            <i class="fas fa-tools text-2xl"></i>
-            <span class="block text-xs mt-1 font-display">Servicios</span>
-        </a>
-        <a href="#gallery" class="text-white hover:text-highlight transition-colors duration-300">
-            <i class="fas fa-images text-2xl"></i>
-            <span class="block text-xs mt-1 font-display">Galería</span>
-        </a>
-        <a href="#contact" class="text-white hover:text-highlight transition-colors duration-300">
-            <i class="fas fa-envelope text-2xl"></i>
-            <span class="block text-xs mt-1 font-display">Contacto</span>
-        </a>
+    <div id="production-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center hidden">
+        <div class="bg-white p-8 rounded-lg max-w-2xl w-full mx-4">
+            <h3 class="text-2xl font-bold mb-4 text-black">Producción y Estilismo</h3>
+            <p class="text-gray-700 mb-4">Nuestro equipo de producción y estilismo se encarga de crear contenido visual impactante para tu marca. Desde sesiones fotográficas hasta producciones de video, nos aseguramos de que tu marca se vea increíble en todos los medios.</p>
+            <ul class="list-disc list-inside text-gray-700 mb-4">
+                <li>Fotografía de productos</li>
+                <li>Sesiones de moda y lifestyle</li>
+                <li>Producción de videos corporativos</li>
+                <li>Dirección de arte</li>
+                <li>Estilismo para eventos y campañas</li>
+            </ul>
+            <button onclick="closeModal('production-modal')" class="bg-black text-white px-4 py-2 rounded hover:bg-gray-800">Cerrar</button>
+        </div>
+    </div>
+
+    <div id="social-media-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center hidden">
+        <div class="bg-white p-8 rounded-lg max-w-2xl w-full mx-4">
+            <h3 class="text-2xl font-bold mb-4 text-black">Gestión de Contenido y Redes Sociales</h3>
+            <p class="text-gray-700 mb-4">Nuestro servicio de gestión de contenido y redes sociales está diseñado para aumentar tu presencia online y conectar con tu audiencia de manera efectiva. Creamos y gestionamos contenido atractivo y relevante para tus plataformas sociales.</p>
+            <ul class="list-disc list-inside text-gray-700 mb-4">
+                <li>Estrategia de contenido</li>
+                <li>Creación y curación de contenido</li>
+                <li>Programación de publicaciones</li>
+                <li>Gestión de comunidad</li>
+                <li>Análisis y reportes de rendimiento</li>
+            </ul>
+            <button onclick="closeModal('social-media-modal')" class="bg-black text-white px-4 py-2 rounded hover:bg-gray-800">Cerrar</button>
+        </div>
+    </div>
+
+    <div id="community-manager-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center hidden">
+        <div class="bg-white p-8 rounded-lg max-w-2xl w-full mx-4">
+            <h3 class="text-2xl font-bold mb-4 text-black">Community Manager</h3>
+            <p class="text-gray-700 mb-4">Nuestro servicio de Community Manager se enfoca en construir y mantener una comunidad activa y comprometida alrededor de tu marca en las redes sociales. Nos encargamos de la interacción diaria con tu audiencia y de fomentar relaciones positivas con tus seguidores.</p>
+            <ul class="list-disc list-inside text-gray-700 mb-4">
+                <li>Gestión de perfiles en redes sociales</li>
+                <li>Respuesta a comentarios y mensajes</li>
+                <li>Creación de contenido interactivo</li>
+                <li>Monitoreo de menciones de la marca</li>
+                <li>Organización de concursos y eventos online</li>
+            </ul>
+            <button onclick="closeModal('community-manager-modal')" class="bg-black text-white px-4 py-2 rounded hover:bg-gray-800">Cerrar</button>
+        </div>
+    </div>
+
+    <div id="paid-media-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center hidden">
+        <div class="bg-white p-8 rounded-lg max-w-2xl w-full mx-4">
+            <h3 class="text-2xl font-bold mb-4 text-black">Paid Media</h3>
+            <p class="text-gray-700 mb-4">Nuestro servicio de Paid Media se centra en la creación y gestión de campañas publicitarias pagadas en diversas plataformas digitales. Optimizamos tus anuncios para maximizar el retorno de inversión y alcanzar a tu audiencia objetivo de manera efectiva.</p>
+            <ul class="list-disc list-inside text-gray-700 mb-4">
+                <li>Estrategia de publicidad digital</li>
+                <li>Gestión de campañas en Google Ads</li>
+                <li>Publicidad en redes sociales (Facebook, Instagram, LinkedIn)</li>
+                <li>Retargeting y remarketing</li>
+                <li>Análisis y optimización de campañas</li>
+            </ul>
+            <button onclick="closeModal('paid-media-modal')" class="bg-black text-white px-4 py-2 rounded hover:bg-gray-800">Cerrar</button>
+        </div>
+    </div>
+
+    <div id="website-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center hidden">
+        <div class="bg-white p-8 rounded-lg max-w-2xl w-full mx-4">
+            <h3 class="text-2xl font-bold mb-4 text-black">Website</h3>
+            <p class="text-gray-700 mb-4">Nuestro servicio de diseño y desarrollo web crea sitios atractivos, funcionales y optimizados para buscadores. Nos aseguramos de que tu presencia online refleje la esencia de tu marca y proporcione una excelente experiencia de usuario.</p>
+            <ul class="list-disc list-inside text-gray-700 mb-4">
+                <li>Diseño web personalizado</li>
+                <li>Desarrollo frontend y backend</li>
+                <li>Optimización para dispositivos móviles</li>
+                <li>Integración de CMS (Sistemas de gestión de contenido)</li>
+                <li>Optimización SEO on-page</li>
+            </ul>
+            <button onclick="closeModal('website-modal')" class="bg-black text-white px-4 py-2 rounded hover:bg-gray-800">Cerrar</button>
+        </div>
+    </div>
+     
+    <!-- Gallery Modal -->
+    <div id="gallery-modal" class="fixed inset-0 bg-black bg-opacity-90 z-50 flex items-center justify-center hidden">
+        <div class="max-w-4xl w-full mx-4">
+            <div class="relative">
+                <img id="gallery-modal-image" src="" alt="Gallery Image" class="w-full h-auto">
+                <button onclick="closeGalleryModal()" class="absolute top-4 right-4 text-white text-3xl">&times;</button>
+            </div>
+            <div class="mt-4 text-white">
+                <h3 id="gallery-modal-title" class="text-2xl font-bold mb-2"></h3>
+                <p id="gallery-modal-description" class="mb-4"></p>
+                <a id="gallery-modal-link" href="#" target="_blank" class="bg-highlight text-black px-4 py-2 rounded hover:bg-white transition-colors duration-300">Ver Proyecto</a>
+            </div>
+        </div>
     </div>
 
     <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
