@@ -1,53 +1,53 @@
 <!DOCTYPE html>
-<html lang="es" class="scroll-smooth">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>DIMA - Agencia de Marketing Digital</title>
-    <meta name="description" content="DIMA - Especializada en estrategias de marketing digital, creando soluciones innovadoras y personalizadas para el éxito online.">
+    <title>Runway Studio - Creative Agency</title>
+    <meta name="description" content="Runway Studio - Specialized in branding, production, styling, and digital marketing solutions for your success.">
     <link rel="icon" href="images/logo.png" type="image/x-icon">
     <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
     <link rel="manifest" href="manifest.json">
     <meta name="theme-color" content="#000000">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="apple-mobile-web-app-title" content="DIMA">
+    <meta name="apple-mobile-web-app-title" content="Runway Studio">
 
     <!-- SEO Meta Tags -->
-    <link rel="canonical" href="https://dima.agency/">
+    <link rel="canonical" href="https://runwaystudio.com/">
     <meta name="robots" content="index, follow">
-    <meta name="author" content="DIMA">
-    <meta name="keywords" content="marketing digital, estrategias online, redes sociales, SEO, creación de contenido">
+    <meta name="author" content="Runway Studio">
+    <meta name="keywords" content="branding, production, styling, social media marketing, content creation, paid media">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://dima.agency/">
-    <meta property="og:title" content="DIMA - Agencia de Marketing Digital">
-    <meta property="og:description" content="Especializada en estrategias de marketing digital, creando soluciones innovadoras y personalizadas para el éxito online.">
-    <meta property="og:image" content="https://dima.agency/images/logo.png">
+    <meta property="og:url" content="https://runwaystudio.com/">
+    <meta property="og:title" content="Runway Studio - Creative Agency">
+    <meta property="og:description" content="Specialized in branding, production, styling, and digital marketing solutions for your success.">
+    <meta property="og:image" content="https://runwaystudio.com/images/logo.png">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://dima.agency/">
-    <meta property="twitter:title" content="DIMA - Agencia de Marketing Digital">
-    <meta property="twitter:description" content="Especializada en estrategias de marketing digital, creando soluciones innovadoras y personalizadas para el éxito online.">
-    <meta property="twitter:image" content="https://dima.agency/images/logo.png">
+    <meta property="twitter:url" content="https://runwaystudio.com/">
+    <meta property="twitter:title" content="Runway Studio - Creative Agency">
+    <meta property="twitter:description" content="Specialized in branding, production, styling, and digital marketing solutions for your success.">
+    <meta property="twitter:image" content="https://runwaystudio.com/images/logo.png">
 
     <!-- Structured Data for Local SEO -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
-      "name": "DIMA",
-      "image": "https://dima.agency/images/logo.png",
-      "url": "https://dima.agency",
-      "telephone": "+1234567890",
-      "email": "info@dima.agency",
+      "name": "Runway Studio",
+      "image": "https://runwaystudio.com/images/logo.png",
+      "url": "https://runwaystudio.com",
+      "telephone": "+543517323886",
+      "email": "info.rnwstudio@gmail.com",
       "address": {
         "@type": "PostalAddress",
-        "addressLocality": "Ciudad",
-        "addressRegion": "Estado",
-        "addressCountry": "País"
+        "addressLocality": "City",
+        "addressRegion": "State",
+        "addressCountry": "Argentina"
       },
       "openingHoursSpecification": [
         {
@@ -66,9 +66,9 @@
             theme: {
                 extend: {
                     colors: {
-                        primary: '#000000',
-                        secondary: '#FFFFFF',
-                        accent: '#333333',
+                        primary: '#4A90E2',
+                        secondary: '#F5A623',
+                        accent: '#50E3C2',
                     },
                     fontFamily: {
                         sans: ['Poppins', 'sans-serif'],
@@ -83,7 +83,7 @@
     <style type="text/tailwindcss">
         @layer utilities {
             .bg-gradient-primary {
-                background-image: linear-gradient(135deg, #000000, #333333);
+                background-image: linear-gradient(135deg, #4A90E2, #50E3C2);
             }
             .text-shadow {
                 text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
@@ -126,88 +126,35 @@
             .fade-in.visible {
                 opacity: 1;
             }
-
-            html, body {
-                width: 100%;
-                overflow-x: hidden;
-                margin: 0;
-                padding: 0;
-            }
-
-            * {
-                box-sizing: border-box;
-            }
-
-            .horizontal-scroll {
-                display: flex;
-                overflow-x: auto;
-                scroll-snap-type: x mandatory;
-                -webkit-overflow-scrolling: touch;
-                scrollbar-width: none;
-                gap: 1rem;
-                padding: 1rem;
-            }
-
-            .horizontal-scroll::-webkit-scrollbar {
-                display: none;
-            }
-
-            .scroll-item {
-                scroll-snap-align: start;
-                flex: 0 0 auto;
-            }
-
-            .app-bar {
-                position: fixed;
-                bottom: 0;
-                left: 0;
-                right: 0;
-                background-color: rgba(0, 0, 0, 0.8);
-                backdrop-filter: blur(10px);
-                z-index: 50;
-            }
-
-            .animate-slide {
-                animation: slide 20s linear infinite;
-            }
-
-            @keyframes slide {
-                0% {
-                    transform: translateX(0);
-                }
-                100% {
-                    transform: translateX(-50%);
-                }
-            }
         }
     </style>
 </head>
 <body class="font-sans bg-gray-100 text-gray-800 relative">
     <!-- Preloader -->
     <div id="preloader" class="fixed inset-0 z-50 flex flex-col items-center justify-center bg-white">
-        <img src="images/logo.png" alt="DIMA Logo" class="w-32 h-32 pulse">
-        <p class="mt-4 text-primary font-semibold">Innovando Estrategias Digitales</p>
-        <p class="mt-2 text-sm text-gray-500">Impulsado por DIMA</p>
+        <img src="images/logo.png" alt="Runway Studio Logo" class="w-32 h-32 pulse">
+        <p class="mt-4 text-primary font-semibold">Innovating Creative Strategies</p>
+        <p class="mt-2 text-sm text-gray-500">Powered By Runway Studio</p>
     </div>
 
     <!-- Header -->
     <header class="sticky top-0 z-40 bg-white shadow-md">
         <div class="container mx-auto px-4 py-3 flex justify-between items-center">
             <div class="flex items-center">
-                <img src="images/logo.png" alt="DIMA Logo" class="h-16 mr-4 transition-transform duration-300 hover:scale-105">
+                <img src="images/logo.png" alt="Runway Studio Logo" class="h-16 mr-4 transition-transform duration-300 hover:scale-105">
             </div>
             <nav class="hidden md:flex space-x-6">
-                <a href="#nosotros" class="text-gray-800 hover:text-primary transition-colors duration-300">Nosotros</a>
-                <a href="#servicios" class="text-gray-800 hover:text-primary transition-colors duration-300">Servicios</a>
+                <a href="#about" class="text-gray-800 hover:text-primary transition-colors duration-300">About</a>
+                <a href="#services" class="text-gray-800 hover:text-primary transition-colors duration-300">Services</a>
                 <a href="#portfolio" class="text-gray-800 hover:text-primary transition-colors duration-300">Portfolio</a>
-                <a href="#contacto" class="text-gray-800 hover:text-primary transition-colors duration-300">Contacto</a>
+                <a href="#contact" class="text-gray-800 hover:text-primary transition-colors duration-300">Contact</a>
             </nav>
             <div class="flex items-center space-x-4">
                 <div class="flex space-x-2">
-                    <a href="https://facebook.com/dimaagency" target="_blank" rel="noopener noreferrer" class="text-primary hover:text-secondary transition-colors duration-300">
-                        <i class="fab fa-facebook-f"></i>
+                    <a href="https://www.tiktok.com/@rnw.studio" target="_blank" rel="noopener noreferrer" class="text-primary hover:text-secondary transition-colors duration-300">
+                        <i class="fab fa-tiktok"></i>
                     </a>
-                    <a href="https://instagram.com/dimaagency" target="_blank" rel="noopener noreferrer" class="text-primary hover:text-secondary transition-colors duration-300">
+                    <a href="https://instagram.com/rnw.studio_" target="_blank" rel="noopener noreferrer" class="text-primary hover:text-secondary transition-colors duration-300">
                         <i class="fab fa-instagram"></i>
                     </a>
                 </div>
@@ -226,110 +173,102 @@
                     muted 
                     playsinline
                 >
-                    <source src="video/digital-marketing.mp4" type="video/mp4">
-                    Tu navegador no soporta el tag de video.
+                    <source src="video/runway-studio.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
                 </video>
                 <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
                     <div class="text-center">
-                        <h1 class="text-4xl md:text-6xl font-bold text-white text-shadow mb-4">DIMA Agencia Digital</h1>
-                        <p class="text-xl md:text-2xl text-white text-shadow mb-8">Planes personalizados para potenciar tu presencia online y lograr el éxito</p>
-                        <a href="#contacto" class="bg-primary text-white px-8 py-3 rounded-full font-bold hover:bg-secondary transition-colors duration-300">Comienza Ahora</a>
+                        <h1 class="text-4xl md:text-6xl font-bold text-white text-shadow mb-4">Welcome to Runway Studio</h1>
+                        <p class="text-xl md:text-2xl text-white text-shadow mb-8">Elevate your brand with our creative solutions</p>
+                        <a href="#contact" class="bg-primary text-white px-8 py-3 rounded-full font-bold hover:bg-secondary transition-colors duration-300">Schedule a Free Meeting</a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Nosotros Section -->
-        <section id="nosotros" class="mb-12 fade-in">
-            <h2 class="text-4xl font-serif font-bold text-center mb-6 text-primary">Nosotros</h2>
+        <!-- About Section -->
+        <section id="about" class="mb-12 fade-in">
+            <h2 class="text-4xl font-serif font-bold text-center mb-6 text-primary">About Runway Studio</h2>
             <p class="text-lg text-gray-700 mb-8 text-center max-w-3xl mx-auto">
-                DIMA es una agencia de marketing digital especializada en crear estrategias innovadoras y personalizadas para impulsar tu presencia online. Nuestro equipo de expertos combina creatividad, profesionalismo y análisis de datos para ofrecer resultados excepcionales para empresas de todos los tamaños.
+                Runway Studio is a creative agency specializing in branding, production, styling, and digital marketing solutions. Our team of experts combines creativity, professionalism, and data-driven insights to deliver outstanding results for businesses of all sizes.
             </p>
         </section>
 
-        <!-- Servicios Section -->
-        <section id="servicios" class="mb-12 fade-in">
-            <h2 class="text-4xl font-serif font-bold text-center mb-6 text-primary">Nuestros Servicios</h2>
+        <!-- Services Section -->
+        <section id="services" class="mb-12 fade-in">
+            <h2 class="text-4xl font-serif font-bold text-center mb-6 text-primary">Our Services</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div class="bg-white p-6 rounded-lg shadow-md">
-                    <i class="fas fa-chart-line text-4xl text-primary mb-4"></i>
-                    <h3 class="text-xl font-bold mb-2">Optimización SEO</h3>
-                    <p class="text-gray-600">Mejora la visibilidad y el ranking de tu sitio web en los motores de búsqueda.</p>
+                    <i class="fas fa-paint-brush text-4xl text-primary mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">Branding & Rebranding</h3>
+                    <p class="text-gray-600">Create or refresh your brand identity to stand out in the market.</p>
                 </div>
                 <div class="bg-white p-6 rounded-lg shadow-md">
-                    <i class="fas fa-bullhorn text-4xl text-primary mb-4"></i>
-                    <h3 class="text-xl font-bold mb-2">Marketing en Redes Sociales</h3>
-                    <p class="text-gray-600">Involucra a tu audiencia y construye reconocimiento de marca en las plataformas sociales.</p>
+                    <i class="fas fa-camera text-4xl text-primary mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">Production & Styling</h3>
+                    <p class="text-gray-600">Professional photo and video production with expert styling.</p>
                 </div>
                 <div class="bg-white p-6 rounded-lg shadow-md">
-                    <i class="fas fa-pen-fancy text-4xl text-primary mb-4"></i>
-                    <h3 class="text-xl font-bold mb-2">Creación de Contenido</h3>
-                    <p class="text-gray-600">Desarrolla contenido atractivo que resuene con tu público objetivo.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Por qué elegir DIMA Section -->
-        <section id="why-choose" class="mb-12 fade-in">
-            <h2 class="text-4xl font-serif font-bold text-center mb-6 text-primary">Por qué elegir DIMA</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div class="bg-white p-6 rounded-lg shadow-md">
-                    <h3 class="text-xl font-bold mb-2">Estrategias Personalizadas</h3>
-                    <p class="text-gray-600">Creamos estrategias a medida basadas en el perfil único de tu negocio y tus objetivos.</p>
+                    <i class="fas fa-share-alt text-4xl text-primary mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">Social Media Management</h3>
+                    <p class="text-gray-600">Engage your audience and build brand awareness across social platforms.</p>
                 </div>
                 <div class="bg-white p-6 rounded-lg shadow-md">
-                    <h3 class="text-xl font-bold mb-2">Definición de Público Objetivo</h3>
-                    <p class="text-gray-600">Te ayudamos a identificar y alcanzar a tus clientes ideales de manera efectiva.</p>
+                    <i class="fas fa-users text-4xl text-primary mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">Community Management</h3>
+                    <p class="text-gray-600">Build and nurture your online community to foster brand loyalty.</p>
                 </div>
                 <div class="bg-white p-6 rounded-lg shadow-md">
-                    <h3 class="text-xl font-bold mb-2">Ventaja Competitiva</h3>
-                    <p class="text-gray-600">Nuestras estrategias te ayudan a destacar entre los competidores en el panorama digital.</p>
+                    <i class="fas fa-ad text-4xl text-primary mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">Paid Media</h3>
+                    <p class="text-gray-600">Strategic paid advertising campaigns to reach your target audience.</p>
                 </div>
                 <div class="bg-white p-6 rounded-lg shadow-md">
-                    <h3 class="text-xl font-bold mb-2">Resultados Basados en Datos</h3>
-                    <p class="text-gray-600">Proporcionamos análisis detallados e informes para medir y mejorar el rendimiento.</p>
+                    <i class="fas fa-laptop-code text-4xl text-primary mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">Website Development</h3>
+                    <p class="text-gray-600">Create stunning, responsive websites that convert visitors into customers.</p>
                 </div>
             </div>
         </section>
 
         <!-- Portfolio Section -->
         <section id="portfolio" class="mb-12 fade-in">
-            <h2 class="text-4xl font-serif font-bold text-center mb-6 text-primary">Nuestro Portfolio</h2>
+            <h2 class="text-4xl font-serif font-bold text-center mb-6 text-primary">Our Portfolio</h2>
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
                 <!-- Add portfolio items here -->
                 <div class="bg-white rounded-lg overflow-hidden shadow-md">
-                    <img src="images/portfolio1.jpg" alt="Proyecto 1" class="w-full h-48 object-cover">
+                    <img src="images/portfolio1.jpg" alt="Project 1" class="w-full h-48 object-cover">
                     <div class="p-4">
-                        <h3 class="font-bold text-lg mb-2">Nombre del Proyecto</h3>
-                        <p class="text-gray-600">Breve descripción del proyecto y resultados alcanzados.</p>
+                        <h3 class="font-bold text-lg mb-2">Branding Project</h3>
+                        <p class="text-gray-600">Complete brand identity redesign for a local business.</p>
                     </div>
                 </div>
                 <!-- Repeat for more portfolio items -->
             </div>
         </section>
 
-        <!-- Testimonios Section -->
-        <section id="testimonios" class="mb-12 fade-in">
-            <h2 class="text-4xl font-serif font-bold text-center mb-6 text-primary">Testimonios de Clientes</h2>
+        <!-- Testimonials Section -->
+        <section id="testimonials" class="mb-12 fade-in">
+            <h2 class="text-4xl font-serif font-bold text-center mb-6 text-primary">Client Testimonials</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div class="bg-white p-6 rounded-lg shadow-md">
-                    <p class="text-gray-600 mb-4">"DIMA transformó nuestra presencia online. Sus estrategias aumentaron significativamente nuestro tráfico web y generación de leads."</p>
-                    <p class="font-bold">- Juan Pérez, CEO de Empresa XYZ</p>
+                    <p class="text-gray-600 mb-4">"Runway Studio transformed our brand image. Their creative strategies significantly increased our social media engagement and customer base."</p>
+                    <p class="font-bold">- John Doe, CEO of XYZ Fashion</p>
                 </div>
                 <div class="bg-white p-6 rounded-lg shadow-md">
-                    <p class="text-gray-600 mb-4">"Trabajar con DIMA ha sido un cambio de juego para nuestro negocio. Su experiencia en marketing en redes sociales nos ha ayudado a conectar con nuestra audiencia como nunca antes."</p>
-                    <p class="font-bold">- María García, Directora de Marketing en Corporación ABC</p>
+                    <p class="text-gray-600 mb-4">"Working with Runway Studio has been a game-changer for our business. Their expertise in production and styling has elevated our product presentations."</p>
+                    <p class="font-bold">- Jane Smith, Marketing Director at ABC Cosmetics</p>
                 </div>
             </div>
         </section>
 
         <!-- Contact Section -->
-        <section id="contacto" class="mb-12 fade-in">
-            <h2 class="text-4xl font-serif font-bold text-center mb-6 text-primary">Contáctanos</h2>
+        <section id="contact" class="mb-12 fade-in">
+            <h2 class="text-4xl font-serif font-bold text-center mb-6 text-primary">Contact Us</h2>
             <div class="bg-white p-8 rounded-lg shadow-md max-w-2xl mx-auto">
                 <form id="contact-form" class="space-y-4">
                     <div>
-                        <label for="name" class="block text-gray-700 font-bold mb-2">Nombre</label>
+                        <label for="name" class="block text-gray-700 font-bold mb-2">Name</label>
                         <input type="text" id="name" name="name" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring focus:border-primary" required>
                     </div>
                     <div>
@@ -337,10 +276,10 @@
                         <input type="email" id="email" name="email" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring focus:border-primary" required>
                     </div>
                     <div>
-                        <label for="message" class="block text-gray-700 font-bold mb-2">Mensaje</label>
+                        <label for="message" class="block text-gray-700 font-bold mb-2">Message</label>
                         <textarea id="message" name="message" rows="4" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring focus:border-primary" required></textarea>
                     </div>
-                    <button type="submit" class="w-full bg-primary text-white font-bold py-2 px-4 rounded-lg hover:bg-secondary transition-colors duration-300">Enviar Mensaje</button>
+                    <button type="submit" class="w-full bg-primary text-white font-bold py-2 px-4 rounded-lg hover:bg-secondary transition-colors duration-300">Send Message</button>
                 </form>
             </div>
         </section>
@@ -350,30 +289,30 @@
         <div class="container mx-auto px-4">
             <div class="flex flex-wrap justify-between">
                 <div class="w-full md:w-1/3 mb-6 md:mb-0">
-                    <img src="images/logo.png" alt="DIMA Logo" class="h-12 mb-4">
-                    <p class="text-sm">Innovando estrategias digitales para tu éxito.</p>
+                    <img src="images/logo.png" alt="Runway Studio Logo" class="h-12 mb-4">
+                    <p class="text-sm">Innovating creative strategies for your success.</p>
                 </div>
                 <div class="w-full md:w-1/3 mb-6 md:mb-0">
-                    <h3 class="text-lg font-bold mb-4">Enlaces Rápidos</h3>
+                    <h3 class="text-lg font-bold mb-4">Quick Links</h3>
                     <ul class="space-y-2">
-                        <li><a href="#nosotros" class="hover:text-primary transition-colors duration-300">Nosotros</a></li>
-                        <li><a href="#servicios" class="hover:text-primary transition-colors duration-300">Servicios</a></li>
+                        <li><a href="#about" class="hover:text-primary transition-colors duration-300">About Us</a></li>
+                        <li><a href="#services" class="hover:text-primary transition-colors duration-300">Services</a></li>
                         <li><a href="#portfolio" class="hover:text-primary transition-colors duration-300">Portfolio</a></li>
-                        <li><a href="#contacto" class="hover:text-primary transition-colors duration-300">Contacto</a></li>
+                        <li><a href="#contact" class="hover:text-primary transition-colors duration-300">Contact</a></li>
                     </ul>
                 </div>
                 <div class="w-full md:w-1/3">
-                    <h3 class="text-lg font-bold mb-4">Conéctate con Nosotros</h3>
+                    <h3 class="text-lg font-bold mb-4">Connect With Us</h3>
                     <div class="flex space-x-4">
-                        <a href="#" class="text-white hover:text-primary transition-colors duration-300"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="text-white hover:text-primary transition-colors duration-300"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="text-white hover:text-primary transition-colors duration-300"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="text-white hover:text-primary transition-colors duration-300"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.tiktok.com/@rnw.studio" class="text-white hover:text-primary transition-colors duration-300"><i class="fab fa-tiktok"></i></a>
+                        <a href="https://instagram.com/rnw.studio_" class="text-white hover:text-primary transition-colors duration-300"><i class="fab fa-instagram"></i></a>
                     </div>
+                    <p class="mt-4">Phone: +54 3517323886</p>
+                    <p>Email: info.rnwstudio@gmail.com</p>
                 </div>
             </div>
             <div class="mt-8 pt-8 border-t border-gray-700 text-center">
-                <p>&copy; 2023 DIMA Agencia de Marketing Digital. Todos los derechos reservados.</p>
+                <p>&copy; 2023 Runway Studio. All rights reserved.</p>
             </div>
         </div>
     </footer>
@@ -382,26 +321,6 @@
     <button id="back-to-top" class="fixed bottom-4 right-4 bg-primary text-white p-2 rounded-full shadow-lg opacity-0 pointer-events-none transition-opacity duration-300">
         <i class="fas fa-chevron-up"></i>
     </button>
-
-    <!-- App Bar for Mobile -->
-    <div class="app-bar md:hidden flex justify-around items-center py-4">
-        <a href="#nosotros" class="text-white hover:text-primary transition-colors duration-300">
-            <i class="fas fa-info-circle text-2xl"></i>
-            <span class="block text-xs mt-1">Nosotros</span>
-        </a>
-        <a href="#servicios" class="text-white hover:text-primary transition-colors duration-300">
-            <i class="fas fa-cogs text-2xl"></i>
-            <span class="block text-xs mt-1">Servicios</span>
-        </a>
-        <a href="#portfolio" class="text-white hover:text-primary transition-colors duration-300">
-            <i class="fas fa-briefcase text-2xl"></i>
-            <span class="block text-xs mt-1">Portfolio</span>
-        </a>
-        <a href="#contacto" class="text-white hover:text-primary transition-colors duration-300">
-            <i class="fas fa-envelope text-2xl"></i>
-            <span class="block text-xs mt-1">Contacto</span>
-        </a>
-    </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
