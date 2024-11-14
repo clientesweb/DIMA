@@ -1,30 +1,37 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Preloader
     const preloader = document.getElementById('preloader');
-    window.addEventListener('load', () => {
-        preloader.style.display = 'none';
-    });
+    if (preloader) {
+        window.addEventListener('load', () => {
+            preloader.style.display = 'none';
+        });
+    }
 
     // Smooth scrolling for navigation links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
-            document.querySelector(this.getAttribute('href')).scrollIntoView({
-                behavior: 'smooth'
-            });
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth'
+                });
+            }
         });
     });
 
     // Fade-in animation for sections
     const fadeElems = document.querySelectorAll('.fade-in');
     const observerOptions = {
-        threshold: 0.1
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
     };
 
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
             }
         });
     }, observerOptions);
@@ -35,25 +42,24 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Back to Top button functionality
     const backToTopButton = document.getElementById('back-to-top');
-
-    window.addEventListener('scroll', () => {
-        if (window.pageYOffset > 100) {
-            backToTopButton.classList.add('opacity-100');
-            backToTopButton.classList.remove('opacity-0');
-            backToTopButton.classList.remove('pointer-events-none');
-        } else {
-            backToTopButton.classList.remove('opacity-100');
-            backToTopButton.classList.add('opacity-0');
-            backToTopButton.classList.add('pointer-events-none');
-        }
-    });
-
-    backToTopButton.addEventListener('click', () => {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
+    if (backToTopButton) {
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 100) {
+                backToTopButton.classList.add('opacity-100');
+                backToTopButton.classList.remove('opacity-0', 'pointer-events-none');
+            } else {
+                backToTopButton.classList.remove('opacity-100');
+                backToTopButton.classList.add('opacity-0', 'pointer-events-none');
+            }
         });
-    });
+
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    }
 
     // Gallery filter functionality
     const filterButtons = document.querySelectorAll('.filter-btn');
@@ -82,20 +88,22 @@ document.addEventListener('DOMContentLoaded', function() {
     const closeModal = document.getElementById('close-modal');
     const reservationForm = document.getElementById('reservation-form');
 
-    reservationBtn.addEventListener('click', () => {
-        reservationModal.classList.remove('hidden');
-    });
+    if (reservationBtn && reservationModal && closeModal && reservationForm) {
+        reservationBtn.addEventListener('click', () => {
+            reservationModal.classList.remove('hidden');
+        });
 
-    closeModal.addEventListener('click', () => {
-        reservationModal.classList.add('hidden');
-    });
+        closeModal.addEventListener('click', () => {
+            reservationModal.classList.add('hidden');
+        });
 
-    reservationForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        // Here you would typically send the form data to a server
-        alert('Gracias por tu reserva. Te contactaremos pronto para confirmar.');
-        reservationModal.classList.add('hidden');
-    });
+        reservationForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            // Here you would typically send the form data to a server
+            alert('Gracias por tu reserva. Te contactaremos pronto para confirmar.');
+            reservationModal.classList.add('hidden');
+        });
+    }
 
     // Service modals
     const serviceModalTriggers = document.querySelectorAll('.service-modal-trigger');
@@ -131,18 +139,22 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     };
 
-    serviceModalTriggers.forEach(trigger => {
-        trigger.addEventListener('click', () => {
-            const service = trigger.getAttribute('data-service');
-            serviceModalTitle.textContent = serviceInfo[service].title;
-            serviceModalDescription.textContent = serviceInfo[service].description;
-            serviceModal.classList.remove('hidden');
+    if (serviceModalTriggers.length && serviceModal && serviceModalTitle && serviceModalDescription && closeServiceModal) {
+        serviceModalTriggers.forEach(trigger => {
+            trigger.addEventListener('click', () => {
+                const service = trigger.getAttribute('data-service');
+                if (serviceInfo[service]) {
+                    serviceModalTitle.textContent = serviceInfo[service].title;
+                    serviceModalDescription.textContent = serviceInfo[service].description;
+                    serviceModal.classList.remove('hidden');
+                }
+            });
         });
-    });
 
-    closeServiceModal.addEventListener('click', () => {
-        serviceModal.classList.add('hidden');
-    });
+        closeServiceModal.addEventListener('click', () => {
+            serviceModal.classList.add('hidden');
+        });
+    }
 
     // Gallery modals
     const galleryModalTriggers = document.querySelectorAll('.gallery-modal-trigger');
@@ -171,20 +183,24 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     };
 
-    galleryModalTriggers.forEach(trigger => {
-        trigger.addEventListener('click', () => {
-            const project = trigger.getAttribute('data-project');
-            galleryModalImage.src = trigger.src;
-            galleryModalTitle.textContent = galleryInfo[project].title;
-            galleryModalDescription.textContent = galleryInfo[project].description;
-            galleryModalLink.href = galleryInfo[project].link;
-            galleryModal.classList.remove('hidden');
+    if (galleryModalTriggers.length && galleryModal && galleryModalImage && galleryModalTitle && galleryModalDescription && galleryModalLink && closeGalleryModal) {
+        galleryModalTriggers.forEach(trigger => {
+            trigger.addEventListener('click', () => {
+                const project = trigger.getAttribute('data-project');
+                if (galleryInfo[project]) {
+                    galleryModalImage.src = trigger.src;
+                    galleryModalTitle.textContent = galleryInfo[project].title;
+                    galleryModalDescription.textContent = galleryInfo[project].description;
+                    galleryModalLink.href = galleryInfo[project].link;
+                    galleryModal.classList.remove('hidden');
+                }
+            });
         });
-    });
 
-    closeGalleryModal.addEventListener('click', () => {
-        galleryModal.classList.add('hidden');
-    });
+        closeGalleryModal.addEventListener('click', () => {
+            galleryModal.classList.add('hidden');
+        });
+    }
 
     // Updated contact form
     const contactForm = document.getElementById('contact-form');
@@ -270,12 +286,14 @@ document.addEventListener('DOMContentLoaded', function() {
     const heroTitle = document.getElementById('hero-title');
 
     function changeHeroTitle() {
-        heroTitle.style.opacity = '0';
-        setTimeout(() => {
-            heroTitle.textContent = heroTitles[currentTitleIndex];
-            heroTitle.style.opacity = '1';
-            currentTitleIndex = (currentTitleIndex + 1) % heroTitles.length;
-        }, 500);
+        if (heroTitle) {
+            heroTitle.style.opacity = '0';
+            setTimeout(() => {
+                heroTitle.textContent = heroTitles[currentTitleIndex];
+                heroTitle.style.opacity = '1';
+                currentTitleIndex = (currentTitleIndex + 1) % heroTitles.length;
+            }, 500);
+        }
     }
 
     setInterval(changeHeroTitle, 5000);
@@ -312,67 +330,73 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Initialize GSAP ScrollTrigger
-    gsap.registerPlugin(ScrollTrigger);
+    if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+        gsap.registerPlugin(ScrollTrigger);
 
-    // Animate sections on scroll
-    gsap.utils.toArray('.fade-in').forEach(section => {
-        gsap.from(section, {
-            opacity: 0,
-            y: 50,
-            duration: 1,
-            scrollTrigger: {
-                trigger: section,
-                start: "top 80%",
-                end: "bottom 20%",
-                toggleActions: "play none none reverse"
-            }
+        // Animate sections on scroll
+        gsap.utils.toArray('.fade-in').forEach(section => {
+            gsap.from(section, {
+                opacity: 0,
+                y: 50,
+                duration: 1,
+                scrollTrigger: {
+                    trigger: section,
+                    start: "top 80%",
+                    end: "bottom 20%",
+                    toggleActions: "play none none reverse"
+                }
+            });
         });
-    });
 
-    // Animate the banner messages
-    const bannerMessages = [
-        "Bienvenidos a Runway Studio",
-        "Creatividad en Movimiento",
-        "Transformamos Ideas en Realidad"
-    ];
-    let currentMessageIndex = 0;
-    const bannerContainer = document.getElementById('banner-messages');
+        // Animate the banner messages
+        const bannerMessages = [
+            "Bienvenidos a Runway Studio",
+            "Creatividad en Movimiento",
+            "Transformamos Ideas en Realidad"
+        ];
+        let currentMessageIndex = 0;
+        const bannerContainer = document.getElementById('banner-messages');
 
-    function changeBannerMessage() {
-        gsap.to(bannerContainer, {
-            y: -30,
-            opacity: 0,
-            duration: 0.5,
-            onComplete: () => {
-                bannerContainer.innerHTML = `<p class="text-center w-full font-display">${bannerMessages[currentMessageIndex]}</p>`;
-                currentMessageIndex = (currentMessageIndex + 1) % bannerMessages.length;
-                gsap.fromTo(bannerContainer, 
-                    {y: 30, opacity: 0},
-                    {y: 0, opacity: 1, duration: 0.5}
-                );
+        function changeBannerMessage() {
+            if (bannerContainer) {
+                gsap.to(bannerContainer, {
+                    y: -30,
+                    opacity: 0,
+                    duration: 0.5,
+                    onComplete: () => {
+                        bannerContainer.innerHTML = `<p class="text-center w-full font-display">${bannerMessages[currentMessageIndex]}</p>`;
+                        currentMessageIndex = (currentMessageIndex + 1) % bannerMessages.length;
+                        gsap.fromTo(bannerContainer, 
+                            {y: 30, opacity: 0},
+                            {y: 0, opacity: 1, duration: 0.5}
+                        );
+                    }
+                });
             }
+        }
+
+        setInterval(changeBannerMessage, 5000);
+
+        // Animate the floating buttons
+        gsap.from("#reservation-btn", {
+            y: 50,
+            opacity: 0,
+            duration: 1,
+            delay: 1,
+            ease: "power3.out"
+        });
+
+        gsap.from("a[href='https://wa.me/543517323886']", {
+            y: 50,
+            opacity: 0,
+            duration: 1,
+            delay: 1.2,
+            ease: "power3.out"
         });
     }
-
-    setInterval(changeBannerMessage, 5000);
-
-    // Animate the floating buttons
-    gsap.from("#reservation-btn", {
-        y: 50,
-        opacity: 0,
-        duration: 1,
-        delay: 1,
-        ease: "power3.out"
-    });
-
-    gsap.from("a[href='https://wa.me/543517323886']", {
-        y: 50,
-        opacity: 0,
-        duration: 1,
-        delay: 1.2,
-        ease: "power3.out"
-    });
 
     // Log a message to confirm the script has loaded
     console.log('Runway Studio script loaded successfully');
 });
+
+console.log('Script execution completed');
