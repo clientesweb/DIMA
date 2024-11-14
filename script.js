@@ -111,35 +111,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Contact form submission
-    const contactForm = document.getElementById('contact-form');
-    if (contactForm) {
-        contactForm.addEventListener('submit', async (e) => {
-            e.preventDefault();
-            const formData = new FormData(contactForm);
-
-            try {
-                const response = await fetch('https://formspree.io/f/your_formspree_id', {
-                    method: 'POST',
-                    body: formData,
-                    headers: {
-                        'Accept': 'application/json'
-                    }
-                });
-                
-                if (response.ok) {
-                    showNotification('Mensaje enviado con éxito!');
-                    contactForm.reset();
-                } else {
-                    throw new Error('Error al enviar el mensaje');
-                }
-            } catch (error) {
-                console.error('Error:', error);
-                showNotification('Hubo un error al enviar tu mensaje. Por favor, intenta de nuevo.', 'error');
-            }
-        });
-    }
-
     // Newsletter form submission
     const newsletterForm = document.getElementById('newsletter-form');
     if (newsletterForm) {
@@ -254,6 +225,203 @@ document.addEventListener('DOMContentLoaded', function() {
             duration: 0.5,
             delay: i * 0.2
         });
+    });
+
+    // Service Modal Functionality
+    const serviceModalTriggers = document.querySelectorAll('.service-modal-trigger');
+    const serviceModal = document.getElementById('service-modal');
+    const closeServiceModal = document.getElementById('close-service-modal');
+    const serviceModalTitle = document.getElementById('service-modal-title');
+    const serviceModalDescription = document.getElementById('service-modal-description');
+
+    const serviceDetails = {
+        'branding': {
+            title: 'Branding y Re-branding',
+            description: 'Creamos y renovamos la identidad de tu marca para destacar en el mercado. Nuestro servicio incluye diseño de logotipos, paletas de colores, y guías de estilo completas.'
+        },
+        'production': {
+            title: 'Producción y Estilismo',
+            description: 'Creamos contenido visual impactante para tu marca. Desde sesiones fotográficas hasta videos promocionales, nos encargamos de todos los aspectos de la producción.'
+        },
+        'social-media': {
+            title: 'Gestión de Contenido y Redes Sociales',
+            description: 'Manejamos tus redes sociales para aumentar tu presencia online. Desarrollamos estrategias de contenido, programamos publicaciones y gestionamos la interacción con tu audiencia.'
+        },
+        'community-manager': {
+            title: 'Community Manager',
+            description: 'Gestionamos tus comunidades online para fortalecer la relación con tus clientes. Respondemos a comentarios, moderamos discusiones y fomentamos la participación de tu audiencia.'
+        },
+        'paid-media': {
+            title: 'Paid Media',
+            description: 'Optimizamos tus campañas publicitarias para maximizar el retorno de inversión. Gestionamos anuncios en plataformas como Google Ads, Facebook Ads, Instagram Ads y más.'
+        },
+        'website': {
+            title: 'Website',
+            description: 'Diseñamos y desarrollamos sitios web atractivos y funcionales que convierten visitantes en clientes. Nuestros sitios son responsivos, rápidos y optimizados para SEO.'
+        }
+    };
+
+    serviceModalTriggers.forEach(trigger => {
+        trigger.addEventListener('click', () => {
+            const service = trigger.dataset.service;
+            const details = serviceDetails[service];
+            serviceModalTitle.textContent = details.title;
+            serviceModalDescription.textContent = details.description;
+            serviceModal.classList.remove('hidden');
+        });
+    });
+
+    closeServiceModal.addEventListener('click', () => {
+        serviceModal.classList.add('hidden');
+    });
+
+    // Gallery Modal Functionality
+    const galleryModalTriggers = document.querySelectorAll('.gallery-modal-trigger');
+    const galleryModal = document.getElementById('gallery-modal');
+    const closeGalleryModal = document.getElementById('close-gallery-modal');
+    const galleryModalImage = document.getElementById('gallery-modal-image');
+    const galleryModalTitle = document.getElementById('gallery-modal-title');
+    const galleryModalDescription = document.getElementById('gallery-modal-description');
+    const galleryModalLink = document.getElementById('gallery-modal-link');
+
+    const galleryDetails = {
+        'branding-1': {
+            title: 'Proyecto de Branding 1',
+            description: 'Rediseño completo de la identidad visual para una startup tecnológica.',
+            link: '#'
+        },
+        'production-1': {
+            title: 'Producción Fotográfica',
+            description: 'Sesión de fotos para la nueva colección de una marca de moda local.',
+            link: '#'
+        },
+        'social-media-1': {
+            title: 'Campaña en Redes Sociales',
+            description: 'Estrategia y contenido para el lanzamiento de un nuevo producto en Instagram.',
+            link: '#'
+        }
+    };
+
+    galleryModalTriggers.forEach(trigger => {
+        trigger.addEventListener('click', () => {
+            const project = trigger.dataset.project;
+            const details = galleryDetails[project];
+            galleryModalImage.src = trigger.src;
+            galleryModalTitle.textContent = details.title;
+            galleryModalDescription.textContent = details.description;
+            galleryModalLink.href = details.link;
+            galleryModal.classList.remove('hidden');
+        });
+    });
+
+    closeGalleryModal.addEventListener('click', () => {
+        galleryModal.classList.add('hidden');
+    });
+
+    // Dynamic Contact Form
+    const contactForm = document.getElementById('contact-form');
+    const contactFormFields = [
+        { name: 'nombre', type: 'text', placeholder: 'Nombre completo *', required: true },
+        { name: 'whatsapp', type: 'tel', placeholder: 'WhatsApp *', required: true },
+        { name: 'sitio_web', type: 'url', placeholder: 'Sitio Web *', required: true },
+        { name: 'pais', type: 'text', placeholder: 'País' },
+        { name: 'servicios', type: 'select', placeholder: '¿En qué servicios estás interesado?', options: ['BRANDING', 'CREACIÓN DE CONTENIDO | PRODUCCIÓN & ESTILISMO', 'PAUTA PUBLICITARIA', 'TODOS'] },
+        { name: 'anos_empresa', type: 'number', placeholder: '¿Cuántos años lleva la empresa en el mercado?' },
+        { name: 'facturacion', type: 'select', placeholder: '¿Cuánto estás facturando por mes?', options: ['0-1000 USD', '1000USD A 3000USD', '3000USD A 5000USD', '5000USD -10.000USD'] },
+        { name: 'inversion_previa', type: 'radio', placeholder: '¿Alguna vez invertiste en pauta publicitaria?', options: ['Sí', 'No'] },
+        { name: 'monto_inversion', type: 'text', placeholder: '¿Qué monto estarías dispuesto a invertir en pauta publicitaria?' }
+    ];
+
+    contactFormFields.forEach(field => {
+        const wrapper = document.createElement('div');
+        wrapper.className = 'mb-4';
+
+        if (field.type === 'select') {
+            const select = document.createElement('select');
+            select.name = field.name;
+            select.className = 'w-full p-2 bg-white/10 border border-white/20 rounded-lg text-white';
+            select.required = field.required;
+
+            const defaultOption = document.createElement('option');
+            defaultOption.value = '';
+            defaultOption.textContent = field.placeholder;
+            defaultOption.disabled = true;
+            defaultOption.selected = true;
+            select.appendChild(defaultOption);
+
+            field.options.forEach(optionText => {
+                const option = document.createElement('option');
+                option.value = optionText;
+                option.textContent = optionText;
+                select.appendChild(option);
+            });
+
+            wrapper.appendChild(select);
+        } else if (field.type === 'radio') {
+            const fieldset = document.createElement('fieldset');
+            fieldset.className = 'flex gap-4';
+            const legend = document.createElement('legend');
+            legend.textContent = field.placeholder;
+            legend.className = 'mb-2 text-white';
+            fieldset.appendChild(legend);
+
+            field.options.forEach(optionText => {
+                const label = document.createElement('label');
+                label.className = 'flex items-center';
+                const radio = document.createElement('input');
+                radio.type = 'radio';
+                radio.name = field.name;
+                radio.value = optionText;
+                radio.className = 'mr-2';
+                label.appendChild(radio);
+                label.appendChild(document.createTextNode(optionText));
+                fieldset.appendChild(label);
+            });
+
+            wrapper.appendChild(fieldset);
+        } else {
+            const input = document.createElement('input');
+            input.type = field.type;
+            input.name = field.name;
+            input.placeholder = field.placeholder;
+            input.className = 'w-full p-2 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/50';
+            input.required = field.required;
+            wrapper.appendChild(input);
+        }
+
+        contactForm.appendChild(wrapper);
+    });
+
+    const submitButton = document.createElement('button');
+    submitButton.type = 'submit';
+    submitButton.className = 'w-full bg-highlight text-secondary py-2 rounded-lg hover:bg-white/90 transition-colors duration-300 font-display';
+    submitButton.textContent = 'Enviar Mensaje';
+    contactForm.appendChild(submitButton);
+
+    // Contact form submission
+    contactForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const formData = new FormData(contactForm);
+
+        try {
+            const response = await fetch('https://formspree.io/f/your_formspree_id', {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            });
+            
+            if (response.ok) {
+                showNotification('Mensaje enviado con éxito!');
+                contactForm.reset();
+            } else {
+                throw new Error('Error al enviar el mensaje');
+            }
+        } catch (error) {
+            console.error('Error:', error);
+            showNotification('Hubo un error al enviar tu mensaje. Por favor, intenta de nuevo.', 'error');
+        }
     });
 });
 
