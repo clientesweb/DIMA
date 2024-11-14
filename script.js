@@ -27,7 +27,6 @@ document.addEventListener('DOMContentLoaded', function() {
     // Cambiar título cada 5 segundos
     setInterval(showNextTitle, 5000);
 
-
     // Fade-in animation for sections
     const fadeElems = document.querySelectorAll('.fade-in');
     const observer = new IntersectionObserver((entries) => {
@@ -60,7 +59,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     setInterval(rotateBannerMessage, 5000);
 
-    // Gallery filter functionality
+    // Updated Gallery filter functionality
     const filterButtons = document.querySelectorAll('.filter-btn');
     const galleryItems = document.querySelectorAll('.gallery-item');
 
@@ -68,8 +67,10 @@ document.addEventListener('DOMContentLoaded', function() {
         button.addEventListener('click', () => {
             const filter = button.getAttribute('data-filter');
             
-            filterButtons.forEach(btn => btn.classList.remove('active'));
-            button.classList.add('active');
+            filterButtons.forEach(btn => btn.classList.remove('active', 'bg-highlight', 'text-black'));
+            filterButtons.forEach(btn => btn.classList.add('bg-gray-200', 'text-gray-800'));
+            button.classList.add('active', 'bg-highlight', 'text-black');
+            button.classList.remove('bg-gray-200', 'text-gray-800');
 
             galleryItems.forEach(item => {
                 if (filter === 'all' || item.classList.contains(filter)) {
@@ -264,8 +265,7 @@ document.addEventListener('DOMContentLoaded', function() {
         },
         'paid-media': {
             title: 'Paid Media',
-            description: 'Gestionamos la publicidad estratégica en plataformas clave, optimizando la visibilidad y alcance de tu marca a través de campañas dirigidas que maximicen el retorno de inversión.
-'
+            description: 'Gestionamos la publicidad estratégica en plataformas clave, optimizando la visibilidad y alcance de tu marca a través de campañas dirigidas que maximicen el retorno de inversión.'
         },
         'website': {
             title: 'Website',
@@ -310,6 +310,21 @@ document.addEventListener('DOMContentLoaded', function() {
         'social-media-1': {
             title: 'Campaña en Redes Sociales',
             description: 'Estrategia y contenido para el lanzamiento de un nuevo producto en Instagram.',
+            link: '#'
+        },
+        'community-1': {
+            title: 'Gestión de Comunidad',
+            description: 'Estrategia de engagement y manejo de comunidad para una marca de lifestyle.',
+            link: '#'
+        },
+        'paid-media-1': {
+            title: 'Campaña de Paid Media',
+            description: 'Estrategia y ejecución de campaña publicitaria en redes sociales para aumentar ventas.',
+            link: '#'
+        },
+        'website-1': {
+            title: 'Diseño de Sitio Web',
+            description: 'Diseño y desarrollo de sitio web responsivo para una empresa de servicios.',
             link: '#'
         }
     };
