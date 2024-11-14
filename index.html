@@ -338,134 +338,269 @@
             </div>
         </section>     
     
-        <!-- Banner publicitario moderno -->
-        <div class="relative bg-cover bg-center py-16" style="background-image: url('https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000&q=80');">
-            <div class="absolute inset-0 bg-black opacity-60"></div>
-            <div class="container mx-auto px-4 relative z-10">
-                <div class="text-center">
-                    <h2 class="text-4xl font-bold text-white mb-4">Agendá una reunión sin cargo</h2>
-                    <p class="text-xl text-gray-300 mb-8">Regístrate hoy y obtené un 10% de descuento en tu próximo servicio contratado</p>
-                    <div class="flex justify-center space-x-4">
-                        <a href="#contact" class="bg-primary text-secondary px-6 py-3 rounded-full font-bold hover:bg-white transition duration-300">Agendar Ahora</a>
-                        <a href="#services" class="bg-transparent border-2 border-white text-white px-6 py-3 rounded-full font-bold hover:bg-white hover:text-black transition duration-300">Más Información</a>
+        <!-- New FAQ Section -->
+<section id="faq" class="mb-12 fade-in">
+    <h2 class="text-4xl font-serif font-bold text-center mb-6 text-primary">Preguntas Frecuentes</h2>
+    <div class="space-y-4">
+        <div class="bg-secondary/10 p-4 rounded-lg">
+            <button class="flex justify-between items-center w-full text-left" onclick="toggleFAQ(this)">
+                <span class="font-bold">¿Qué tipos de servicios de branding ofrecen?</span>
+                <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="mt-2 hidden">
+                <p>Ofrecemos una amplia gama de servicios de branding, incluyendo diseño de logotipos, identidad visual, estrategia de marca, y más. Nuestro equipo tiene experiencia trabajando con diversas industrias y puede adaptar nuestros servicios a sus necesidades específicas.</p>
+            </div>
+        </div>
+        <div class="bg-secondary/10 p-4 rounded-lg">
+            <button class="flex justify-between items-center w-full text-left" onclick="toggleFAQ(this)">
+                <span class="font-bold">¿Cuánto tiempo toma un proyecto típico de branding?</span>
+                <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="mt-2 hidden">
+                <p>La duración de un proyecto de branding puede variar dependiendo de la complejidad y el alcance del trabajo. Proyectos simples pueden tomar unas semanas, mientras que proyectos más extensos podrían llevar varios meses. Le proporcionaremos un cronograma detallado durante el proceso de consulta.</p>
+            </div>
+        </div>
+        <div class="bg-secondary/10 p-4 rounded-lg">
+            <button class="flex justify-between items-center w-full text-left" onclick="toggleFAQ(this)">
+                <span class="font-bold">¿Ofrecen servicios de gestión de redes sociales?</span>
+                <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="mt-2 hidden">
+                <p>Sí, ofrecemos servicios completos de gestión de redes sociales. Esto incluye la creación de contenido, programación de publicaciones, interacción con la audiencia y análisis de resultados. Trabajamos con varias plataformas como Instagram, Facebook, TikTok y LinkedIn.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Banner publicitario moderno -->
+<div class="relative bg-cover bg-center py-16" style="background-image: url('https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000&q=80');">
+    <div class="absolute inset-0 bg-black opacity-60"></div>
+    <div class="container mx-auto px-4 relative z-10">
+        <div class="text-center">
+            <h2 class="text-4xl font-bold text-white mb-4">Transforma tu Marca con Runway Studio</h2>
+            <p class="text-xl text-gray-300 mb-8">Oferta por tiempo limitado: 20% de descuento en todos nuestros servicios premium</p>
+            <div class="flex justify-center space-x-4">
+                <a href="#contact" class="bg-primary text-secondary px-6 py-3 rounded-full font-bold hover:bg-white transition duration-300">Reservar Ahora</a>
+                <a href="#services" class="bg-transparent border-2 border-white text-white px-6 py-3 rounded-full font-bold hover:bg-white hover:text-black transition duration-300">Saber Más</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- New Customer Reviews Section -->
+<section id="reviews" class="mb-12 fade-in">
+    <h2 class="text-4xl font-serif font-bold text-center mb-6 text-primary">Opiniones de Clientes</h2>
+    <div class="relative overflow-hidden">
+        <div class="flex animate-slide">
+            <div class="flex-none w-80 p-4">
+                <div class="bg-secondary/10 p-6 rounded-lg h-full">
+                    <div class="flex items-center mb-4">
+                        <img src="https://i.pravatar.cc/60?img=1" alt="Cliente" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold">María García</h4>
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-sm">"¡Trabajo de branding increíble! Runway Studio transformó la imagen de mi empresa. Su atención al detalle es incomparable."</p>
+                </div>
+            </div>
+            <div class="flex-none w-80 p-4">
+                <div class="bg-secondary/10 p-6 rounded-lg h-full">
+                    <div class="flex items-center mb-4">
+                        <img src="https://i.pravatar.cc/60?img=2" alt="Cliente" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold">Carlos Rodríguez</h4>
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-sm">"El equipo de Runway Studio es profesional y creativo. Escucharon mis ideas y las llevaron a la vida de manera hermosa."</p>
+                </div>
+            </div>
+            <div class="flex-none w-80 p-4">
+                <div class="bg-secondary/10 p-6 rounded-lg h-full">
+                    <div class="flex items-center mb-4">
+                        <img src="https://i.pravatar.cc/60?img=3" alt="Cliente" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold">Laura Martínez</h4>
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-sm">"Runway Studio superó mis expectativas. El nivel de artesanía y atención al detalle en el diseño de mi marca es simplemente excepcional."</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Modernized Contact Section -->
+<section id="contact" class="mb-12 fade-in">
+    <h2 class="text-4xl font-serif font-bold text-center mb-6 text-primary">Contáctanos</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+        <div class="bg-secondary/10 p-8 rounded-2xl backdrop-blur-sm">
+            <h3 class="text-2xl font-bold mb-6 text-primary">Ponte en Contacto</h3>
+            <form id="contact-form" class="space-y-6">
+                <div class="relative">
+                    <i class="fas fa-user absolute left-4 top-1/2 transform -translate-y-1/2 text-white/50"></i>
+                    <input 
+                        type="text" 
+                        name="name" 
+                        placeholder="Tu Nombre" 
+                        class="w-full p-4 pl-12 bg-secondary/20 text-white rounded-lg border border-white/10 focus:border-primary focus:ring-1 focus:ring-primary transition-all duration-300"
+                        required
+                    >
+                </div>
+                <div class="relative">
+                    <i class="fas fa-envelope absolute left-4 top-1/2 transform -translate-y-1/2 text-white/50"></i>
+                    <input 
+                        type="email" 
+                        name="email" 
+                        placeholder="Tu Email" 
+                        class="w-full p-4 pl-12 bg-secondary/20 text-white rounded-lg border border-white/10 focus:border-primary focus:ring-1 focus:ring-primary transition-all duration-300"
+                        required
+                    >
+                </div>
+                <div class="relative">
+                    <i class="fas fa-message absolute left-4 top-6 text-white/50"></i>
+                    <textarea 
+                        name="message" 
+                        placeholder="Tu Mensaje" 
+                        rows="4" 
+                        class="w-full p-4 pl-12 bg-secondary/20 text-white rounded-lg border border-white/10 focus:border-primary focus:ring-1 focus:ring-primary transition-all duration-300"
+                        required
+                    ></textarea>
+                </div>
+                <button 
+                    type="submit" 
+                    class="w-full bg-primary text-secondary font-bold px-8 py-4 rounded-lg hover:bg-white/90 transition-colors duration-300 flex items-center justify-center gap-2"
+                >
+                    <i class="fas fa-paper-plane"></i>
+                    Enviar Mensaje
+                </button>
+            </form>
+        </div>
+        
+        <div class="space-y-8">
+            <div class="bg-secondary/10 p-8 rounded-2xl backdrop-blur-sm">
+                <h3 class="text-2xl font-bold mb-6 text-primary">Información de Contacto</h3>
+                <div class="space-y-6">
+                    <div class="flex items-start gap-4">
+                        <div class="flex-none w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
+                            <i class="fas fa-location-dot text-primary text-xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-primary mb-1">Dirección</h4>
+                            <p class="text-white/80">Córdoba, Argentina</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <div class="flex-none w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
+                            <i class="fas fa-phone text-primary text-xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-primary mb-1">Teléfono</h4>
+                            <p class="text-white/80">+54 3517323886</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <div class="flex-none w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
+                            <i class="fas fa-envelope text-primary text-xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-primary mb-1">Email</h4>
+                            <p class="text-white/80">info.rnwstudio@gmail.com</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bg-secondary/10 p-8 rounded-2xl backdrop-blur-sm">
+                <h4 class="text-xl font-bold mb-4 text-primary">Horario de Atención</h4>
+                <div class="space-y-2">
+                    <div class="flex justify-between items-center">
+                        <span class="text-white/80">Lunes - Viernes</span>
+                        <span class="text-primary">9:00 AM - 6:00 PM</span>
                     </div>
                 </div>
             </div>
         </div>
-     
-        <!-- Contact Section -->
-        <section id="contact" class="mb-12 fade-in">
-            <h2 class="text-4xl font-serif font-bold text-center mb-6 text-primary">Contáctanos</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-                <div class="bg-secondary/10 p-8 rounded-2xl backdrop-blur-sm">
-                    <h3 class="text-2xl font-bold mb-6 text-primary">Ponte en Contacto</h3>
-                    <form id="contact-form" class="space-y-6">
-                        <div>
-                            <label for="name" class="block text-sm font-medium text-gray-300 mb-1">Nombre</label>
-                            <input type="text" id="name" name="name" required class="w-full px-3 py-2 bg-gray-800 border border-gray-700 rounded-md text-white focus:outline-none focus:ring-2 focus:ring-primary">
-                        </div>
-                        <div>
-                            <label for="email" class="block text-sm font-medium text-gray-300 mb-1">Email</label>
-                            <input type="email" id="email" name="email" required class="w-full px-3 py-2 bg-gray-800 border border-gray-700 rounded-md text-white focus:outline-none focus:ring-2 focus:ring-primary">
-                        </div>
-                        <div>
-                            <label for="message" class="block text-sm font-medium text-gray-300 mb-1">Mensaje</label>
-                            <textarea id="message" name="message" rows="4" required class="w-full px-3 py-2 bg-gray-800 border border-gray-700 rounded-md text-white focus:outline-none focus:ring-2 focus:ring-primary"></textarea>
-                        </div>
-                        <div>
-                            <button type="submit" class="w-full bg-primary text-black font-bold py-2 px-4 rounded-md hover:bg-white transition-colors duration-300">Enviar Mensaje</button>
-                        </div>
-                    </form>
-                </div>
-                
-                <div class="space-y-8">
-                    <div class="bg-secondary/10 p-8 rounded-2xl backdrop-blur-sm">
-                        <h3 class="text-2xl font-bold mb-6 text-primary">Información de Contacto</h3>
-                        <div class="space-y-6">
-                            <div class="flex items-start gap-4">
-                                <div class="flex-none w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
-                                    <i class="fas fa-phone text-primary text-xl"></i>
-                                </div>
-                                <div>
-                                    <h4 class="font-bold text-primary mb-1">Teléfono</h4>
-                                    <p class="text-white/80">+54 3517323886</p>
-                                </div>
-                            </div>
-                            <div class="flex items-start gap-4">
-                                <div class="flex-none w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
-                                    <i class="fas fa-envelope text-primary text-xl"></i>
-                                </div>
-                                <div>
-                                    <h4 class="font-bold text-primary mb-1">Email</h4>
-                                    <p class="text-white/80">info.rnwstudio@gmail.com</p>
-                                </div>
-                            </div>
-                            <div class="flex items-start gap-4">
-                                <div class="flex-none w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
-                                    <i class="fab fa-tiktok text-primary text-xl"></i>
-                                </div>
-                                <div>
-                                    <h4 class="font-bold text-primary mb-1">TikTok</h4>
-                                    <p class="text-white/80">@rnw.studio</p>
-                                </div>
-                            </div>
-                            <div class="flex items-start gap-4">
-                                <div class="flex-none w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
-                                    <i class="fab fa-instagram text-primary text-xl"></i>
-                                </div>
-                                <div>
-                                    <h4 class="font-bold text-primary mb-1">Instagram</h4>
-                                    <p class="text-white/80">@rnw.studio_</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
+    </div>
+</section>
 
+<!-- Map Section -->
+<section id="map" class="mb-12 fade-in">
+    <h2 class="text-4xl font-serif font-bold text-center mb-6 text-primary">Encuéntranos</h2>
+    <div class="rounded-xl overflow-hidden shadow-lg" style="width: 100%; height: 400px;">
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d217954.2557338475!2d-64.33354601892091!3d-31.399054726683706!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9432985f478f5b69%3A0xb0a24f9a5366b092!2sC%C3%B3rdoba%2C%20Cordoba%20Province%2C%20Argentina!5e0!3m2!1sen!2sus!4v1699732427175!5m2!1sen!2sus"
+            width="100%"
+            height="100%"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+    </div>
+</section>
+</main>
 
-    <footer class="bg-black text-white py-12 pb-24 border-t border-primary">
-        <div class="container mx-auto px-4">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div>
-                    <img src="images/logo.png" alt="Runway Studio" class="h-24 mb-4 mx-auto md:mx-0">
-                    <p class="text-center md:text-left">Creatividad en movimiento para tu marca.</p>
-                </div>
-                <div class="text-center md:text-left">
-                    <h3 class="text-xl font-bold mb-4">Enlaces Rápidos</h3>
-                    <ul class="space-y-2">
-                        <li><a href="#about" class="hover:text-primary transition-colors duration-300">Sobre Nosotros</a></li>
-                        <li><a href="#services" class="hover:text-primary transition-colors duration-300">Nuestros Servicios</a></li>
-                        <li><a href="#gallery" class="hover:text-primary transition-colors duration-300">Galería</a></li>
-                        <li><a href="#contact" class="hover:text-primary transition-colors duration-300">Contacto</a></li>
-                    </ul>
-                </div>
-                <div class="text-center md:text-left">
-                    <h3 class="text-xl font-bold mb-4">Newsletter</h3>
-                    <p class="mb-4">Mantente actualizado con nuestras últimas noticias y ofertas.</p>
-                    <form id="newsletter-form" class="flex flex-col sm:flex-row gap-4">
-                        <input 
-                            type="email" 
-                            placeholder="Tu email" 
-                            class="flex-grow p-2 rounded-lg bg-white/10 border border-white/20 focus:border-primary focus:ring-1 focus:ring-primary transition-all duration-300"
-                            required
-                        >
-                        <button 
-                            type="submit" 
-                            class="bg-primary text-secondary px-6 py-2 rounded-lg hover:bg-white/90 transition-colors duration-300"
-                        >
-                            Suscribirse
-                        </button>
-                    </form>
-                </div>
+<footer class="bg-black text-white py-12 pb-24 border-t border-primary">
+    <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div>
+                <img src="images/logo.png" alt="Runway Studio" class="h-24 mb-4 mx-auto md:mx-0">
+                <p class="text-center md:text-left">Creatividad en movimiento para tu marca.</p>
             </div>
-            <div class="mt-8 pt-8 border-t border-white/10 text-center">
-                <p>&copy; 2023 Runway Studio. Todos los derechos reservados.</p>
+            <div class="text-center md:text-left">
+                <h3 class="text-xl font-bold mb-4">Enlaces Rápidos</h3>
+                <ul class="space-y-2">
+                    <li><a href="#about" class="hover:text-primary transition-colors duration-300">Sobre Nosotros</a></li>
+                    <li><a href="#services" class="hover:text-primary transition-colors duration-300">Nuestros Servicios</a></li>
+                    <li><a href="#gallery" class="hover:text-primary transition-colors duration-300">Galería</a></li>
+                    <li><a href="#contact" class="hover:text-primary transition-colors duration-300">Contacto</a></li>
+                </ul>
+            </div>
+            <div class="text-center md:text-left">
+                <h3 class="text-xl font-bold mb-4">Newsletter</h3>
+                <p class="mb-4">Mantente actualizado con nuestras últimas noticias y ofertas.</p>
+                <form id="newsletter-form" class="flex flex-col sm:flex-row gap-4">
+                    <input 
+                        type="email" 
+                        placeholder="Tu email" 
+                        class="flex-grow p-2 rounded-lg bg-white/10 border border-white/20 focus:border-primary focus:ring-1 focus:ring-primary transition-all duration-300"
+                        required
+                    >
+                    <button 
+                        type="submit" 
+                        class="bg-primary text-secondary px-6 py-2 rounded-lg hover:bg-white/90 transition-colors duration-300"
+                    >
+                        Suscribirse
+                    </button>
+                </form>
             </div>
         </div>
-    </footer>
+        <div class="mt-8 pt-8 border-t border-white/10 text-center">
+            <p>&copy; 2023 Runway Studio. Todos los derechos reservados.</p>
+        </div>
+    </div>
+</footer>
 
     <!-- Floating WhatsApp Button -->
     <a href="https://wa.me/543517323886" target="_blank" rel="noopener noreferrer" class="fixed bottom-24 right-4 z-50 bg-green-500 text-white rounded-full p-4 shadow-lg hover:bg-green-600 transition-colors duration-300">
