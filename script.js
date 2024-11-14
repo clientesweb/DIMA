@@ -7,6 +7,49 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+    // Hero Typing Effect
+    const heroTitles = [
+        "Impulsá tu e-commerce hacia el éxito : hacemos que tu marca destaque y tus ventas aumenten",
+        "Diseño y desarrollo web: creamos experiencias digitales que conviertan visitantes en clientes",
+        "Estrategias de Marketing digital: potenciamos tu presencia online"
+    ];
+    let currentTitleIndex = 0;
+    const heroTitleElement = document.getElementById('hero-title');
+
+    function typeWriter(text, index, callback) {
+        if (index < text.length) {
+            heroTitleElement.innerHTML = text.substring(0, index + 1) + '<span class="cursor">|</span>';
+            setTimeout(() => typeWriter(text, index + 1, callback), 50);
+        } else {
+            heroTitleElement.innerHTML = text;
+            setTimeout(callback, 2000);
+        }
+    }
+
+    function eraseText(callback) {
+        const text = heroTitleElement.innerText;
+        if (text.length > 0) {
+            heroTitleElement.innerHTML = text.substring(0, text.length - 1) + '<span class="cursor">|</span>';
+            setTimeout(() => eraseText(callback), 30);
+        } else {
+            callback();
+        }
+    }
+
+    function cycleHeroTitles() {
+        eraseText(() => {
+            currentTitleIndex = (currentTitleIndex + 1) % heroTitles.length;
+            typeWriter(heroTitles[currentTitleIndex], 0, () => {
+                setTimeout(cycleHeroTitles, 2000);
+            });
+        });
+    }
+
+    // Iniciar el ciclo de títulos
+    typeWriter(heroTitles[currentTitleIndex], 0, () => {
+        setTimeout(cycleHeroTitles, 2000);
+    });
+
     // Smooth scrolling for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
