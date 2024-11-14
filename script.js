@@ -7,58 +7,26 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Hero Typing Effect
-    const heroTitles = [
-        "Impulsá tu e-commerce hacia el éxito : hacemos que tu marca destaque y tus ventas aumenten",
-        "Diseño y desarrollo web: creamos experiencias digitales que conviertan visitantes en clientes",
-        "Estrategias de Marketing digital: potenciamos tu presencia online"
-    ];
+    // Hero Title Rotation
+    const heroTitles = document.querySelectorAll('.hero-title');
     let currentTitleIndex = 0;
-    const heroTitleElement = document.getElementById('hero-title');
 
-    function typeWriter(text, index, callback) {
-        if (index < text.length) {
-            heroTitleElement.innerHTML = text.substring(0, index + 1) + '<span class="cursor">|</span>';
-            setTimeout(() => typeWriter(text, index + 1, callback), 50);
-        } else {
-            heroTitleElement.innerHTML = text;
-            setTimeout(callback, 2000);
-        }
+    function showNextTitle() {
+        heroTitles[currentTitleIndex].classList.remove('opacity-100');
+        heroTitles[currentTitleIndex].classList.add('opacity-0');
+        
+        currentTitleIndex = (currentTitleIndex + 1) % heroTitles.length;
+        
+        heroTitles[currentTitleIndex].classList.remove('opacity-0');
+        heroTitles[currentTitleIndex].classList.add('opacity-100');
     }
 
-    function eraseText(callback) {
-        const text = heroTitleElement.innerText;
-        if (text.length > 0) {
-            heroTitleElement.innerHTML = text.substring(0, text.length - 1) + '<span class="cursor">|</span>';
-            setTimeout(() => eraseText(callback), 30);
-        } else {
-            callback();
-        }
-    }
+    // Mostrar el primer título inmediatamente
+    heroTitles[0].classList.add('opacity-100');
 
-    function cycleHeroTitles() {
-        eraseText(() => {
-            currentTitleIndex = (currentTitleIndex + 1) % heroTitles.length;
-            typeWriter(heroTitles[currentTitleIndex], 0, () => {
-                setTimeout(cycleHeroTitles, 2000);
-            });
-        });
-    }
+    // Cambiar título cada 5 segundos
+    setInterval(showNextTitle, 5000);
 
-    // Iniciar el ciclo de títulos
-    typeWriter(heroTitles[currentTitleIndex], 0, () => {
-        setTimeout(cycleHeroTitles, 2000);
-    });
-
-    // Smooth scrolling for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            document.querySelector(this.getAttribute('href')).scrollIntoView({
-                behavior: 'smooth'
-            });
-        });
-    });
 
     // Fade-in animation for sections
     const fadeElems = document.querySelectorAll('.fade-in');
