@@ -214,6 +214,23 @@ video {
     width: 100%;
     padding: 0 20px; /* Opcional: Para un poco de espacio a los lados */
 }
+       @keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.animate-marquee {
+  display: flex;
+  animation: marquee 20s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
     </style>
 </head>
 <body class="font-sans bg-black text-white relative">
