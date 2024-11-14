@@ -31,9 +31,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Top banner messages
     const bannerMessages = [
-        "Experience luxury like never before with VIP Design",
-        "Custom vehicle designs tailored to your dreams",
-        "Transform your ride into a masterpiece"
+        "Bienvenidos a Runway Studio",
+        "Creatividad en movimiento para tu marca",
+        "Transforma tu visión en realidad"
     ];
     const bannerContainer = document.getElementById('banner-messages');
     let currentMessageIndex = 0;
@@ -78,7 +78,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     reservationBtn.addEventListener('click', () => {
         reservationModal.classList.remove('hidden');
-        showNotification('Reservation form opened!');
+        showNotification('Formulario de reserva abierto!');
     });
 
     closeModal.addEventListener('click', () => {
@@ -99,15 +99,15 @@ document.addEventListener('DOMContentLoaded', function() {
             });
             
             if (response.ok) {
-                showNotification('Reservation submitted successfully!');
+                showNotification('Reserva enviada con éxito!');
                 reservationForm.reset();
                 reservationModal.classList.add('hidden');
             } else {
-                throw new Error('Reservation submission failed');
+                throw new Error('Error al enviar la reserva');
             }
         } catch (error) {
             console.error('Error:', error);
-            showNotification('There was an error submitting your reservation. Please try again.', 'error');
+            showNotification('Hubo un error al enviar tu reserva. Por favor, intenta de nuevo.', 'error');
         }
     });
 
@@ -128,14 +128,14 @@ document.addEventListener('DOMContentLoaded', function() {
                 });
                 
                 if (response.ok) {
-                    showNotification('Message sent successfully!');
+                    showNotification('Mensaje enviado con éxito!');
                     contactForm.reset();
                 } else {
-                    throw new Error('Message submission failed');
+                    throw new Error('Error al enviar el mensaje');
                 }
             } catch (error) {
                 console.error('Error:', error);
-                showNotification('There was an error sending your message. Please try again.', 'error');
+                showNotification('Hubo un error al enviar tu mensaje. Por favor, intenta de nuevo.', 'error');
             }
         });
     }
@@ -157,14 +157,14 @@ document.addEventListener('DOMContentLoaded', function() {
                 });
                 
                 if (response.ok) {
-                    showNotification('Successfully subscribed to the newsletter!');
+                    showNotification('¡Suscripción al boletín exitosa!');
                     newsletterForm.reset();
                 } else {
-                    throw new Error('Newsletter subscription failed');
+                    throw new Error('Error en la suscripción al boletín');
                 }
             } catch (error) {
                 console.error('Error:', error);
-                showNotification('There was an error subscribing to the newsletter. Please try again.', 'error');
+                showNotification('Hubo un error al suscribirte al boletín. Por favor, intenta de nuevo.', 'error');
             }
         });
     }
@@ -256,3 +256,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+// Log a message to confirm the script has loaded
+console.log('Runway Studio script loaded successfully');
