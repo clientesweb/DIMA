@@ -70,46 +70,98 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Reservation Modal
-    const reservationBtn = document.getElementById('reservation-btn');
-    const closeModal = document.getElementById('close-modal');
-    const reservationModal = document.getElementById('reservation-modal');
-    const reservationForm = document.getElementById('reservation-form');
+    // Service modal functions
+    function openModal(modalId) {
+        document.getElementById(modalId).classList.remove('hidden');
+    }
 
-    reservationBtn.addEventListener('click', () => {
-        reservationModal.classList.remove('hidden');
-        showNotification('Formulario de reserva abierto!');
+    function closeModal(modalId) {
+        document.getElementById(modalId).classList.add('hidden');
+    }
+
+    // Attach event listeners to service modal buttons
+    document.querySelectorAll('[onclick^="openModal"]').forEach(button => {
+        button.addEventListener('click', (e) => {
+            const modalId = e.target.getAttribute('onclick').match(/'([^']+)'/)[1];
+            openModal(modalId);
+        });
     });
 
-    closeModal.addEventListener('click', () => {
-        reservationModal.classList.add('hidden');
+    document.querySelectorAll('[onclick^="closeModal"]').forEach(button => {
+        button.addEventListener('click', (e) => {
+            const modalId = e.target.getAttribute('onclick').match(/'([^']+)'/)[1];
+            closeModal(modalId);
+        });
     });
 
-    reservationForm.addEventListener('submit', async (e) => {
-        e.preventDefault();
-        const formData = new FormData(reservationForm);
+    // Gallery modal functions
+    function openGalleryModal(imageId) {
+        const modal = document.getElementById('gallery-modal');
+        const modalImage = document.getElementById('gallery-modal-image');
+        const modalTitle = document.getElementById('gallery-modal-title');
+        const modalDescription = document.getElementById('gallery-modal-description');
+        const modalLink = document.getElementById('gallery-modal-link');
 
-        try {
-            const response = await fetch('https://formspree.io/f/your_formspree_id', {
-                method: 'POST',
-                body: formData,
-                headers: {
-                    'Accept': 'application/json'
-                }
-            });
-            
-            if (response.ok) {
-                showNotification('Reserva enviada con éxito!');
-                reservationForm.reset();
-                reservationModal.classList.add('hidden');
-            } else {
-                throw new Error('Error al enviar la reserva');
-            }
-        } catch (error) {
-            console.error('Error:', error);
-            showNotification('Hubo un error al enviar tu reserva. Por favor, intenta de nuevo.', 'error');
-        }
+        // Set the image source
+        modalImage.src = document.querySelector(`[onclick="openGalleryModal('${imageId}')"]`).src;
+
+        // Set the title, description, and link (you'll need to customize this based on your data)
+        modalTitle.textContent = "Proyecto: " + imageId;
+        modalDescription.textContent = "Descripción del proyecto " + imageId + ". Aquí puedes agregar más detalles sobre el proyecto.";
+        modalLink.href = "#"; // Set the actual project link here
+
+        modal.classList.remove('hidden');
+    }
+
+    function closeGalleryModal() {
+        document.getElementById('gallery-modal').classList.add('hidden');
+    }
+
+    // Attach event listeners to gallery modal buttons
+    document.querySelectorAll('[onclick^="openGalleryModal"]').forEach(button => {
+        button.addEventListener('click', (e) => {
+            const imageId = e.target.getAttribute('onclick').match(/'([^']+)'/)[1];
+            openGalleryModal(imageId);
+        });
     });
+
+    document.querySelector('[onclick="closeGalleryModal()"]').addEventListener('click', closeGalleryModal);
+
+    // FAQ toggle function
+    function toggleFAQ(element) {
+        const content = element.nextElementSibling;
+        const icon = element.querySelector('i');
+        content.classList.toggle('hidden');
+        icon.classList.toggle('fa-chevron-down');
+        icon.classList.toggle('fa-chevron-up');
+    }
+
+    // Attach event listeners to FAQ buttons
+    document.querySelectorAll('[onclick^="toggleFAQ"]').forEach(button => {
+        button.addEventListener('click', () => toggleFAQ(button));
+    });
+
+    // Hero messages rotation
+    const heroMessages = [
+        "Impulsá tu e-commerce hacia el éxito: hacemos que tu marca destaque y tus ventas aumenten",
+        "Diseño y desarrollo web: creamos experiencias digitales que conviertan visitantes en clientes",
+        "Estrategias de Marketing digital: potenciamos tu presencia online"
+    ];
+
+    let currentHeroMessageIndex = 0;
+    const heroMessagesElement = document.getElementById('hero-messages');
+
+    function rotateHeroMessages() {
+        heroMessagesElement.style.opacity = 0;
+        setTimeout(() => {
+            heroMessagesElement.textContent = heroMessages[currentHeroMessageIndex];
+            heroMessagesElement.style.opacity = 1;
+            currentHeroMessageIndex = (currentHeroMessageIndex + 1) % heroMessages.length;
+        }, 500);
+    }
+
+    setInterval(rotateHeroMessages, 5000);
+    rotateHeroMessages(); // Initial call to display the first message
 
     // Contact form submission
     const contactForm = document.getElementById('contact-form');
@@ -140,54 +192,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Newsletter form submission
-    const newsletterForm = document.getElementById('newsletter-form');
-    if (newsletterForm) {
-        newsletterForm.addEventListener('submit', async (e) => {
-            e.preventDefault();
-            const formData = new FormData(newsletterForm);
-
-            try {
-                const response = await fetch('https://formspree.io/f/your_formspree_id', {
-                    method: 'POST',
-                    body: formData,
-                    headers: {
-                        'Accept': 'application/json'
-                    }
-                });
-                
-                if (response.ok) {
-                    showNotification('¡Suscripción al boletín exitosa!');
-                    newsletterForm.reset();
-                } else {
-                    throw new Error('Error en la suscripción al boletín');
-                }
-            } catch (error) {
-                console.error('Error:', error);
-                showNotification('Hubo un error al suscribirte al boletín. Por favor, intenta de nuevo.', 'error');
-            }
-        });
-    }
-
-    // Back to top button functionality
-    const backToTopButton = document.getElementById('back-to-top');
-    window.addEventListener('scroll', () => {
-        if (window.pageYOffset > 100) {
-            backToTopButton.classList.add('opacity-100');
-            backToTopButton.classList.remove('opacity-0', 'pointer-events-none');
-        } else {
-            backToTopButton.classList.remove('opacity-100');
-            backToTopButton.classList.add('opacity-0', 'pointer-events-none');
-        }
-    });
-
-    backToTopButton.addEventListener('click', () => {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
-    });
-
     // Notification function
     function showNotification(message, type = 'success') {
         const notification = document.createElement('div');
@@ -209,52 +213,54 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // GSAP animations
-    gsap.registerPlugin(ScrollTrigger);
+    if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+        gsap.registerPlugin(ScrollTrigger);
 
-    // Animate services on scroll
-    gsap.utils.toArray('#services .group').forEach((service, i) => {
-        gsap.from(service, {
-            scrollTrigger: {
-                trigger: service,
-                start: "top bottom-=100",
-                toggleActions: "play none none reverse"
-            },
-            opacity: 0,
-            y: 50,
-            duration: 0.6,
-            delay: i * 0.2
+        // Animate services on scroll
+        gsap.utils.toArray('#services .group').forEach((service, i) => {
+            gsap.from(service, {
+                scrollTrigger: {
+                    trigger: service,
+                    start: "top bottom-=100",
+                    toggleActions: "play none none reverse"
+                },
+                opacity: 0,
+                y: 50,
+                duration: 0.6,
+                delay: i * 0.2
+            });
         });
-    });
 
-    // Animate gallery items on scroll
-    gsap.utils.toArray('#gallery .gallery-item').forEach((item, i) => {
-        gsap.from(item, {
-            scrollTrigger: {
-                trigger: item,
-                start: "top bottom-=50",
-                toggleActions: "play none none reverse"
-            },
-            opacity: 0,
-            scale: 0.8,
-            duration: 0.5,
-            delay: i * 0.1
+        // Animate gallery items on scroll
+        gsap.utils.toArray('#gallery .gallery-item').forEach((item, i) => {
+            gsap.from(item, {
+                scrollTrigger: {
+                    trigger: item,
+                    start: "top bottom-=50",
+                    toggleActions: "play none none reverse"
+                },
+                opacity: 0,
+                scale: 0.8,
+                duration: 0.5,
+                delay: i * 0.1
+            });
         });
-    });
 
-    // Animate FAQ items
-    gsap.utils.toArray('#faq .bg-secondary\\/10').forEach((faq, i) => {
-        gsap.from(faq, {
-            scrollTrigger: {
-                trigger: faq,
-                start: "top bottom-=50",
-                toggleActions: "play none none reverse"
-            },
-            opacity: 0,
-            x: -50,
-            duration: 0.5,
-            delay: i * 0.2
+        // Animate FAQ items
+        gsap.utils.toArray('#faq .bg-secondary\\/10').forEach((faq, i) => {
+            gsap.from(faq, {
+                scrollTrigger: {
+                    trigger: faq,
+                    start: "top bottom-=50",
+                    toggleActions: "play none none reverse"
+                },
+                opacity: 0,
+                x: -50,
+                duration: 0.5,
+                delay: i * 0.2
+            });
         });
-    });
+    }
 });
 
 // Log a message to confirm the script has loaded
