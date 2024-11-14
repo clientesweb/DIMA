@@ -70,6 +70,47 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
+    // Reservation Modal
+    const reservationBtn = document.getElementById('reservation-btn');
+    const closeModal = document.getElementById('close-modal');
+    const reservationModal = document.getElementById('reservation-modal');
+    const reservationForm = document.getElementById('reservation-form');
+
+    reservationBtn.addEventListener('click', () => {
+        reservationModal.classList.remove('hidden');
+        showNotification('Formulario de reserva abierto!');
+    });
+
+    closeModal.addEventListener('click', () => {
+        reservationModal.classList.add('hidden');
+    });
+
+    reservationForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const formData = new FormData(reservationForm);
+
+        try {
+            const response = await fetch('https://formspree.io/f/your_formspree_id', {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            });
+            
+            if (response.ok) {
+                showNotification('Reserva enviada con éxito!');
+                reservationForm.reset();
+                reservationModal.classList.add('hidden');
+            } else {
+                throw new Error('Error al enviar la reserva');
+            }
+        } catch (error) {
+            console.error('Error:', error);
+            showNotification('Hubo un error al enviar tu reserva. Por favor, intenta de nuevo.', 'error');
+        }
+    });
+
     // Contact form submission
     const contactForm = document.getElementById('contact-form');
     if (contactForm) {
@@ -162,6 +203,11 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 3000);
     }
 
+    // Initialize Instagram embed
+    if (window.instgrm) {
+        window.instgrm.Embeds.process();
+    }
+
     // GSAP animations
     gsap.registerPlugin(ScrollTrigger);
 
@@ -208,46 +254,6 @@ document.addEventListener('DOMContentLoaded', function() {
             duration: 0.5,
             delay: i * 0.2
         });
-    });
-
-    // FAQ toggle functionality
-    const faqButtons = document.querySelectorAll('#faq button');
-    faqButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            const content = button.nextElementSibling;
-            content.classList.toggle('hidden');
-            const icon = button.querySelector('i');
-            icon.classList.toggle('fa-chevron-down');
-            icon.classList.toggle('fa-chevron-up');
-        });
-    });
-
-    // Customer reviews slider
-    const reviewsContainer = document.querySelector('#reviews .flex');
-    let isDown = false;
-    let startX;
-    let scrollLeft;
-
-    reviewsContainer.addEventListener('mousedown', (e) => {
-        isDown = true;
-        startX = e.pageX - reviewsContainer.offsetLeft;
-        scrollLeft = reviewsContainer.scrollLeft;
-    });
-
-    reviewsContainer.addEventListener('mouseleave', () => {
-        isDown = false;
-    });
-
-    reviewsContainer.addEventListener('mouseup', () => {
-        isDown = false;
-    });
-
-    reviewsContainer.addEventListener('mousemove', (e) => {
-        if (!isDown) return;
-        e.preventDefault();
-        const x = e.pageX - reviewsContainer.offsetLeft;
-        const walk = (x - startX) * 3;
-        reviewsContainer.scrollLeft = scrollLeft - walk;
     });
 });
 
