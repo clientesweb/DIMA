@@ -302,9 +302,39 @@ document.addEventListener('DOMContentLoaded', function() {
             description: 'Rediseño completo de la identidad visual para una startup tecnológica.',
             link: '#'
         },
+        'branding-2': {
+            title: 'Proyecto de Branding 2',
+            description: 'Desarrollo de identidad de marca para una empresa de productos orgánicos.',
+            link: '#'
+        },
+        'branding-3': {
+            title: 'Proyecto de Branding 3',
+            description: 'Creación de logo y guía de estilo para una cadena de restaurantes.',
+            link: '#'
+        },
+        'branding-4': {
+            title: 'Proyecto de Branding 4',
+            description: 'Rediseño de marca para una empresa de servicios financieros.',
+            link: '#'
+        },
+        'branding-5': {
+            title: 'Proyecto de Branding 5',
+            description: 'Desarrollo de identidad visual para una ONG ambiental.',
+            link: '#'
+        },
+        'branding-6': {
+            title: 'Proyecto de Branding 6',
+            description: 'Creación de marca para una línea de productos de belleza.',
+            link: '#'
+        },
         'production-1': {
             title: 'Producción Fotográfica',
             description: 'Sesión de fotos para la nueva colección de una marca de moda local.',
+            link: '#'
+        },
+        'production-2': {
+            title: 'Producción de Video',
+            description: 'Creación de video promocional para el lanzamiento de un nuevo producto tecnológico.',
             link: '#'
         },
         'social-media-1': {
@@ -312,19 +342,49 @@ document.addEventListener('DOMContentLoaded', function() {
             description: 'Estrategia y contenido para el lanzamiento de un nuevo producto en Instagram.',
             link: '#'
         },
+        'social-media-2': {
+            title: 'Gestión de Redes Sociales',
+            description: 'Manejo integral de redes sociales para una marca de moda durante 6 meses.',
+            link: '#'
+        },
         'community-1': {
             title: 'Gestión de Comunidad',
             description: 'Estrategia de engagement y manejo de comunidad para una marca de lifestyle.',
             link: '#'
         },
-        'paid-media-1': {
-            title: 'Campaña de Paid Media',
-            description: 'Estrategia y ejecución de campaña publicitaria en redes sociales para aumentar ventas.',
+        'community-2': {
+            title: 'Campaña de Fidelización',
+            description: 'Desarrollo y ejecución de campaña para aumentar la lealtad de los clientes.',
             link: '#'
         },
         'website-1': {
             title: 'Diseño de Sitio Web',
             description: 'Diseño y desarrollo de sitio web responsivo para una empresa de servicios.',
+            link: '#'
+        },
+        'website-2': {
+            title: 'Rediseño de E-commerce',
+            description: 'Actualización y optimización de tienda en línea para mejorar la experiencia del usuario.',
+            link: '#'
+        },
+        'website-3': {
+            title: 'Landing Page',
+            description: 'Diseño de landing page para campaña de marketing digital.',
+            link: '#'
+        },
+        'website-4': {
+            title: 'Aplicación Web',
+            description: 'Desarrollo de aplicación web para gestión de proyectos internos.',
+            link: '#'
+        },
+        'website-5': {
+            title: 'Portal de Noticias',
+            description: 'Diseño y desarrollo de portal de noticias con sistema de gestión de contenidos.',
+            link: '#'
+        },
+        'website-6': {
+            title: 'Sitio Web Corporativo',
+            description: 'Creación de sitio web corporativo multilingüe para empresa internacional.',
             link: '#'
         }
     };
