@@ -1,0 +1,55 @@
+{
+  "name": "Runway Studio",
+  "short_name": "Runway",
+  "description": "Runway Studio - Creatividad en movimiento para tu marca",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#000000",
+  "orientation": "any",
+  "icons": [
+    {
+      "src": "/images/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/images/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "splash_pages": null,
+  "scope": "/",
+  "lang": "es-AR",
+  "dir": "ltr",
+  "prefer_related_applications": false,
+  "related_applications": [],
+  "categories": ["design", "marketing", "business"],
+  "screenshots": [
+    {
+      "src": "/images/screenshot1.jpg",
+      "sizes": "1280x720",
+      "type": "image/jpeg"
+    },
+    {
+      "src": "/images/screenshot2.jpg",
+      "sizes": "1280x720",
+      "type": "image/jpeg"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Contacto",
+      "url": "/#contact",
+      "description": "Contacta con Runway Studio"
+    },
+    {
+      "name": "Servicios",
+      "url": "/#services",
+      "description": "Explora nuestros servicios"
+    }
+  ]
+}
