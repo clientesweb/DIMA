@@ -31,9 +31,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Top banner messages
     const bannerMessages = [
-        "Welcome to Runway Studio",
-        "Schedule a free meeting today",
-        "Get 10% off your next service when you register today"
+        "Bienvenidos a Runway Studio",
+        "Agendá una reunión sin cargo",
+        "Regístrate hoy y obtené un 10% de descuento en tu próximo servicio contratado"
     ];
     const bannerContainer = document.getElementById('banner-messages');
     let currentMessageIndex = 0;
@@ -137,7 +137,7 @@ document.addEventListener('DOMContentLoaded', function() {
     gsap.registerPlugin(ScrollTrigger);
 
     // Animate services on scroll
-    gsap.utils.toArray('#services .bg-white').forEach((service, i) => {
+    gsap.utils.toArray('#services .group').forEach((service, i) => {
         gsap.from(service, {
             scrollTrigger: {
                 trigger: service,
