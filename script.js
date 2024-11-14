@@ -31,9 +31,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Top banner messages
     const bannerMessages = [
-        "Bienvenidos a Runway Studio",
-        "Agendá una reunión sin cargo",
-        "Regístrate hoy y obtené un 10% de descuento en tu próximo servicio contratado"
+        "Experience luxury like never before with VIP Design",
+        "Custom vehicle designs tailored to your dreams",
+        "Transform your ride into a masterpiece"
     ];
     const bannerContainer = document.getElementById('banner-messages');
     let currentMessageIndex = 0;
@@ -70,6 +70,47 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
+    // Reservation Modal
+    const reservationBtn = document.getElementById('reservation-btn');
+    const closeModal = document.getElementById('close-modal');
+    const reservationModal = document.getElementById('reservation-modal');
+    const reservationForm = document.getElementById('reservation-form');
+
+    reservationBtn.addEventListener('click', () => {
+        reservationModal.classList.remove('hidden');
+        showNotification('Reservation form opened!');
+    });
+
+    closeModal.addEventListener('click', () => {
+        reservationModal.classList.add('hidden');
+    });
+
+    reservationForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const formData = new FormData(reservationForm);
+
+        try {
+            const response = await fetch('https://formspree.io/f/your_formspree_id', {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            });
+            
+            if (response.ok) {
+                showNotification('Reservation submitted successfully!');
+                reservationForm.reset();
+                reservationModal.classList.add('hidden');
+            } else {
+                throw new Error('Reservation submission failed');
+            }
+        } catch (error) {
+            console.error('Error:', error);
+            showNotification('There was an error submitting your reservation. Please try again.', 'error');
+        }
+    });
+
     // Contact form submission
     const contactForm = document.getElementById('contact-form');
     if (contactForm) {
@@ -95,6 +136,35 @@ document.addEventListener('DOMContentLoaded', function() {
             } catch (error) {
                 console.error('Error:', error);
                 showNotification('There was an error sending your message. Please try again.', 'error');
+            }
+        });
+    }
+
+    // Newsletter form submission
+    const newsletterForm = document.getElementById('newsletter-form');
+    if (newsletterForm) {
+        newsletterForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const formData = new FormData(newsletterForm);
+
+            try {
+                const response = await fetch('https://formspree.io/f/your_formspree_id', {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+                
+                if (response.ok) {
+                    showNotification('Successfully subscribed to the newsletter!');
+                    newsletterForm.reset();
+                } else {
+                    throw new Error('Newsletter subscription failed');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                showNotification('There was an error subscribing to the newsletter. Please try again.', 'error');
             }
         });
     }
@@ -133,6 +203,11 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 3000);
     }
 
+    // Initialize Instagram embed
+    if (window.instgrm) {
+        window.instgrm.Embeds.process();
+    }
+
     // GSAP animations
     gsap.registerPlugin(ScrollTrigger);
 
@@ -151,8 +226,8 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Animate portfolio items on scroll
-    gsap.utils.toArray('#portfolio .bg-white').forEach((item, i) => {
+    // Animate gallery items on scroll
+    gsap.utils.toArray('#gallery .gallery-item').forEach((item, i) => {
         gsap.from(item, {
             scrollTrigger: {
                 trigger: item,
@@ -166,11 +241,11 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Animate testimonials
-    gsap.utils.toArray('#testimonials .bg-white').forEach((testimonial, i) => {
-        gsap.from(testimonial, {
+    // Animate FAQ items
+    gsap.utils.toArray('#faq .bg-secondary\\/10').forEach((faq, i) => {
+        gsap.from(faq, {
             scrollTrigger: {
-                trigger: testimonial,
+                trigger: faq,
                 start: "top bottom-=50",
                 toggleActions: "play none none reverse"
             },
