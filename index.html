@@ -219,17 +219,19 @@ video {
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-100%);
+    transform: translateX(-50%);
   }
 }
 
 .animate-marquee {
   display: flex;
-  animation: marquee 20s linear infinite;
+  animation: marquee 15s linear infinite;
 }
 
-.animate-marquee:hover {
-  animation-play-state: paused;
+@media (max-width: 768px) {
+  .animate-marquee {
+    animation: marquee 20s linear infinite;
+  }
 }
     </style>
 </head>
@@ -512,42 +514,43 @@ video {
          <section class="mb-12 fade-in">
     <h2 class="text-4xl font-serif font-bold text-center mb-6 text-primary">Nuestras Marcas</h2>
     <div class="relative overflow-hidden">
+        <!-- Wrapper para permitir el bucle infinito -->
         <div class="flex animate-marquee whitespace-nowrap">
-            <!-- Marca 1 -->
-            <div class="flex-none w-48 h-24 mx-4">
-                <img src="images/brand1.png" alt="Brand 1" class="w-full h-full object-contain">
+            <!-- Primera serie de marcas -->
+            <div class="flex items-center">
+                <div class="flex-none w-48 h-24 mx-4">
+                    <img src="images/brand1.png" alt="Brand 1" class="w-full h-full object-contain">
+                </div>
+                <div class="flex-none w-48 h-24 mx-4">
+                    <img src="images/brand2.png" alt="Brand 2" class="w-full h-full object-contain">
+                </div>
+                <div class="flex-none w-48 h-24 mx-4">
+                    <img src="images/brand3.png" alt="Brand 3" class="w-full h-full object-contain">
+                </div>
+                <div class="flex-none w-48 h-24 mx-4">
+                    <img src="images/brand4.png" alt="Brand 4" class="w-full h-full object-contain">
+                </div>
+                <div class="flex-none w-48 h-24 mx-4">
+                    <img src="images/brand5.png" alt="Brand 5" class="w-full h-full object-contain">
+                </div>
             </div>
-            <!-- Marca 2 -->
-            <div class="flex-none w-48 h-24 mx-4">
-                <img src="images/brand2.png" alt="Brand 2" class="w-full h-full object-contain">
-            </div>
-            <!-- Marca 3 -->
-            <div class="flex-none w-48 h-24 mx-4">
-                <img src="images/brand3.png" alt="Brand 3" class="w-full h-full object-contain">
-            </div>
-            <!-- Marca 4 -->
-            <div class="flex-none w-48 h-24 mx-4">
-                <img src="images/brand4.png" alt="Brand 4" class="w-full h-full object-contain">
-            </div>
-            <!-- Marca 5 -->
-            <div class="flex-none w-48 h-24 mx-4">
-                <img src="images/brand5.png" alt="Brand 5" class="w-full h-full object-contain">
-            </div>
-            <!-- Duplicado para un bucle infinito -->
-            <div class="flex-none w-48 h-24 mx-4">
-                <img src="images/brand1.png" alt="Brand 1" class="w-full h-full object-contain">
-            </div>
-            <div class="flex-none w-48 h-24 mx-4">
-                <img src="images/brand2.png" alt="Brand 2" class="w-full h-full object-contain">
-            </div>
-            <div class="flex-none w-48 h-24 mx-4">
-                <img src="images/brand3.png" alt="Brand 3" class="w-full h-full object-contain">
-            </div>
-            <div class="flex-none w-48 h-24 mx-4">
-                <img src="images/brand4.png" alt="Brand 4" class="w-full h-full object-contain">
-            </div>
-            <div class="flex-none w-48 h-24 mx-4">
-                <img src="images/brand5.png" alt="Brand 5" class="w-full h-full object-contain">
+            <!-- Segunda serie de marcas duplicadas -->
+            <div class="flex items-center">
+                <div class="flex-none w-48 h-24 mx-4">
+                    <img src="images/brand1.png" alt="Brand 1" class="w-full h-full object-contain">
+                </div>
+                <div class="flex-none w-48 h-24 mx-4">
+                    <img src="images/brand2.png" alt="Brand 2" class="w-full h-full object-contain">
+                </div>
+                <div class="flex-none w-48 h-24 mx-4">
+                    <img src="images/brand3.png" alt="Brand 3" class="w-full h-full object-contain">
+                </div>
+                <div class="flex-none w-48 h-24 mx-4">
+                    <img src="images/brand4.png" alt="Brand 4" class="w-full h-full object-contain">
+                </div>
+                <div class="flex-none w-48 h-24 mx-4">
+                    <img src="images/brand5.png" alt="Brand 5" class="w-full h-full object-contain">
+                </div>
             </div>
         </div>
     </div>
