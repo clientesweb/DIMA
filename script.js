@@ -264,7 +264,8 @@ document.addEventListener('DOMContentLoaded', function() {
         },
         'paid-media': {
             title: 'Paid Media',
-            description: 'Optimizamos tus campañas publicitarias para maximizar el retorno de inversión. Gestionamos anuncios en plataformas como Google Ads, Facebook Ads, Instagram Ads y más.'
+            description: 'Gestionamos la publicidad estratégica en plataformas clave, optimizando la visibilidad y alcance de tu marca a través de campañas dirigidas que maximicen el retorno de inversión.
+'
         },
         'website': {
             title: 'Website',
