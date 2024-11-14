@@ -31,9 +31,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Top banner messages
     const bannerMessages = [
-        "Experimenta el marketing digital como nunca antes con DIMA",
-        "Estrategias de marketing personalizadas para tus sueños",
-        "Transforma tu presencia online en una obra maestra"
+        "Welcome to Runway Studio",
+        "Schedule a free meeting today",
+        "Get 10% off your next service when you register today"
     ];
     const bannerContainer = document.getElementById('banner-messages');
     let currentMessageIndex = 0;
@@ -49,9 +49,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     setInterval(rotateBannerMessage, 5000);
 
-    // Portfolio filter functionality
+    // Gallery filter functionality
     const filterButtons = document.querySelectorAll('.filter-btn');
-    const portfolioItems = document.querySelectorAll('.portfolio-item');
+    const galleryItems = document.querySelectorAll('.gallery-item');
 
     filterButtons.forEach(button => {
         button.addEventListener('click', () => {
@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', function() {
             filterButtons.forEach(btn => btn.classList.remove('active'));
             button.classList.add('active');
 
-            portfolioItems.forEach(item => {
+            galleryItems.forEach(item => {
                 if (filter === 'all' || item.classList.contains(filter)) {
                     item.style.display = 'block';
                 } else {
@@ -87,14 +87,14 @@ document.addEventListener('DOMContentLoaded', function() {
                 });
                 
                 if (response.ok) {
-                    showNotification('Mensaje enviado con éxito!');
+                    showNotification('Message sent successfully!');
                     contactForm.reset();
                 } else {
-                    throw new Error('Error al enviar el mensaje');
+                    throw new Error('Message submission failed');
                 }
             } catch (error) {
                 console.error('Error:', error);
-                showNotification('Hubo un error al enviar tu mensaje. Por favor, inténtalo de nuevo.', 'error');
+                showNotification('There was an error sending your message. Please try again.', 'error');
             }
         });
     }
@@ -137,7 +137,7 @@ document.addEventListener('DOMContentLoaded', function() {
     gsap.registerPlugin(ScrollTrigger);
 
     // Animate services on scroll
-    gsap.utils.toArray('#servicios .bg-white').forEach((service, i) => {
+    gsap.utils.toArray('#services .bg-white').forEach((service, i) => {
         gsap.from(service, {
             scrollTrigger: {
                 trigger: service,
@@ -166,8 +166,8 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Animate testimonial items
-    gsap.utils.toArray('#testimonios .bg-white').forEach((testimonial, i) => {
+    // Animate testimonials
+    gsap.utils.toArray('#testimonials .bg-white').forEach((testimonial, i) => {
         gsap.from(testimonial, {
             scrollTrigger: {
                 trigger: testimonial,
